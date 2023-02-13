@@ -1,0 +1,10 @@
+.track-page{
+  margin: 100px 0 20px;
+}
+.track-page .track-btn{
+  background-color: #2695FF;
+  color: #ffffff;
+  border: none;
+  padding: 5px 20px;
+  font-size: 20px;
+}

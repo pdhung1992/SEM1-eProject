@@ -1,0 +1,37 @@
+.contact-page{
+  margin-top: 100px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.contact-page .contact-info{
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  left: -20%;
+  margin-top: 80px;
+  padding: 80px 30px;
+  background-color: #2695FF;
+  border-radius: 30px 0 30px 0;
+  box-shadow: 0px 0px 13px 0px #00000040;
+  color: #ffffff;
+}
+.contact-page .contact-info h2{
+  text-align: center;
+}
+
+.contact-page .send-mess{
+  background-color: rgba(38, 149, 255, 0.1);
+  padding: 80px 20px 80px 200px;
+  border-radius: 0 80px 0 80px;
+  box-shadow: 0px 0px 13px 0px #00000040;
+}
+.contact-page .send-mess button{
+  background-color: #2695FF;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+.contact-page .send-mess button:hover{
+  background-color: #ffffff;
+  color: #2695FF;
+}
+
+

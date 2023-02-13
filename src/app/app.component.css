@@ -1,0 +1,158 @@
+
+/*nav*/
+.main-navbar{
+  height: 80px;
+  place-content: center;
+  background: rgba(38, 149, 255, 1);
+  color: #ffffff;
+  position: fixed;
+  padding-top: 5px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.main-navbar .brand__logo h1{
+  color: #ffffff;
+  font-family: 'Knewave', cursive;
+  padding-left: 10px;
+}
+
+.main-navbar .nav__menu{
+  position: relative;
+}
+.main-navbar .nav__menu .btn{
+  border: none;
+  color: #ffffff;
+}
+.main-navbar .nav__menu .btn a{
+  color: #ffffff;
+}
+.main-navbar .nav__menu .dropdown-menu{
+  padding-top: 21px;
+  background: rgba(38, 149, 255, 1);
+  border: none;
+  border-radius: 10px;
+}
+.main-navbar .nav__menu .dropdown-menu .dropdown-item:hover{
+  color: rgba(38, 149, 255, 1);
+}
+.main-navbar .nav__menu .dropdown-menu a{
+  color: #ffffff;
+}
+
+
+.main-navbar .nav__search{
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.main-navbar .nav__search .form-item{
+  position: relative;
+  align-items: center;
+}
+.main-navbar .nav__search .form-item input{
+  padding-left: 30px;
+}
+.main-navbar .nav__search .form-item i{
+  position: absolute;
+  padding-left: 7px;
+  padding-top: 7px;
+  color: black;
+}
+.main-navbar .nav__search .form-control{
+  border-radius: 15px;
+}
+
+.main-navbar .nav__icons{
+  font-size: 24px;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+.main-navbar .nav__icons a{
+  color: #ffffff;
+  text-align: center;
+}
+.main-navbar .nav__icons .wish-icon{
+  position: relative;
+}
+.main-navbar .nav__icons .wish-icon .wish-value{
+  position: absolute;
+  top: -10px;
+  right: 7px;
+  font-size: 16px;
+  color: #2695FF;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 3px 10px;
+}
+.main-navbar .nav__icons .cart-icon{
+  position: relative;
+}
+.main-navbar .nav__icons .cart-icon .cart-value{
+  position: absolute;
+  top: -10px;
+  right: 7px;
+  font-size: 16px;
+  color: #2695FF;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 3px 10px;
+}
+/*banner*/
+.banner{
+  text-align: right;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+.banner-heading{
+  animation-name: anim;
+  animation-duration: 2s;
+}
+.banner-part{
+  animation-name: anim;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes anim {
+  0%{
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*footer*/
+.main-footer{
+  padding-top: 25px;
+  background: rgba(38, 149, 255, 1);
+  color: #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.main-footer .brand__logo{
+  color: #ffffff;
+  font-family: 'Knewave', cursive;
+}
+.main-footer .form-control{
+  border-radius: 15px;
+}
+.main-footer .nav__icons{
+  text-align: center;
+  font-size: 20px;
+}
+.main-footer a{
+  color: #ffffff;
+}
+.main-footer i{
+  color: #ffffff;
+}

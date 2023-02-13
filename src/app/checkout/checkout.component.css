@@ -1,0 +1,24 @@
+.checkout-page{
+  margin: 100px 0 20px;
+}
+
+.checkout-page .billing{
+
+}
+
+.checkout-page .summary{
+  background-color: #2695FF;
+  color: #ffffff;
+  padding: 20px;
+}
+.checkout-page .summary .order-cfm{
+  display: flex;
+  justify-content: end;
+}
+.checkout-page .summary .order-cfm .order-cfm-btn{
+  border: none;
+  background-color: #ffffff;
+  color: #2695FF;
+  padding: 5px 20px;
+  font-size: 20px;
+}
