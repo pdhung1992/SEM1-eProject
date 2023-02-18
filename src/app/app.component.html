@@ -1,76 +1,166 @@
+<!--header-->
+<header>
+  <div class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-7 header-info">
+          <div class="header-contact">Call us toll free: <span style="color: #000000; font-weight: 500">+84-988888888</span></div>
+          <div class="header-contact">Send us an email: <span style="color: #000000; font-weight: 500">bussiness@digiauctions.com</span></div>
+        </div>
+        <div class="col-5 header-info">
+          <div class="container-fluid header-info-icon">
+            <div>
+              <a routerLink="/track"><i class="bi bi-truck"></i>  Order tracking</a>
+            </div>
+            <div>
+              <a routerLink="/wishlist"><i class="bi bi-heart"></i> Wishlist</a>
+            </div>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col brand-logo">
+          <a routerLink=""><h1>DigiAuctions</h1></a>
+        </div>
+        <div class="col header-search">
+          <div class="form-item">
+            <span><i class="bi bi-search"></i></span>
+            <input type="text" placeholder="Search products..." name="search-keyword" class="form-control">
+          </div>
+        </div>
+        <div class="col header-cart">
+          <a routerLink="/cart">
+          <div class="container-fluid header-cart-item">
+            <div>
+              <span style="font-weight: 500">My cart <i class="bi bi-cart"></i></span>
+            </div>
+          </div>
+          <div class="container-fluid header-cart-item">
+            <div>
+              <span>0 Items - $ 0.00</span>
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--end of header-->
+
 <!--nav bar-->
 <div class=" navbar main-navbar">
-  <div class="col-2 brand__logo">
-    <a routerLink=""><h1>DigiAuctions</h1></a>
-  </div>
-  <div class="col-5 navbar justify-content-end nav__menu">
-    <div class="dropdown">
-      <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="bi bi-list"></i>   Categories
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" routerLink="/categories/phones"><i class="bi bi-phone"></i>   Mobile phones</a></li>
-        <li><a class="dropdown-item" routerLink="/categories/laptops"><i class="bi bi-laptop"></i>   Laptop & PCs</a></li>
-        <li><a class="dropdown-item" routerLink="/categories/tablets"><i class="bi bi-tablet"></i>   Tablets</a></li>
-        <li><a class="dropdown-item" routerLink="/categories/cameras"><i class="bi bi-smartwatch"></i> Smart watch</a></li>
-        <li><a class="dropdown-item" routerLink="/categories/tv"><i class="bi bi-tv"></i>   TV & Audio</a></li>
-        <li><a class="dropdown-item" routerLink="/categories/accessories"><i class="bi bi-headphones"></i>   Accessories</a></li>
-      </ul>
-    </div>
-    <div class="dropdown">
-      <a routerLink="/vendors">
-        <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Vendors
+  <div class="container">
+    <div class="col-11 navbar justify-content-start nav-menu">
+      <div class="dropdown">
+        <a routerLink="/categories/phone">
+          <button class="nav-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mobile phones
+          </button>
+        </a>
+      </div>
+      <div class="dropdown">
+        <a routerLink="/categories/laptop-pc">
+          <button class="nav-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Laptop & PCs
+          </button>
+        </a>
+      </div>
+      <div class="dropdown">
+        <a routerLink="/categories/tablet">
+          <button class="nav-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tablets
+          </button>
+        </a>
+      </div>
+      <div class="dropdown">
+        <a routerLink="/categories/watch">
+          <button class="nav-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Watches
+          </button>
+        </a>
+      </div>
+      <div class="dropdown">
+        <a routerLink="/categories/tv-audio">
+          <button class="nav-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            TV & Audio
+          </button>
+        </a>
+      </div>
+      <div class="dropdown">
+        <a routerLink="/categories/accessory">
+          <button class="nav-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Accessories
+          </button>
+        </a>
+      </div>
+      <div class="dropdown">
+        <a routerLink="/vendors">
+          <button class="nav-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Vendors
+          </button>
+        </a>
+      </div>
+      <div class="dropdown">
+        <button class="nav-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Support <i class="bi bi-chevron-down"></i>
         </button>
-      </a>
-    </div>
-    <div class="dropdown">
-      <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Support
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" routerLink="/track">Order tracking</a></li>
-        <li><a class="dropdown-item" routerLink="/contact">Contact us</a></li>
-        <li><a class="dropdown-item" routerLink="/faq">Faqs</a></li>
-      </ul>
-    </div>
-    <div class="dropdown">
-      <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        About Us
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" routerLink="/introduce">About DigiAuctions</a></li>
-        <li><a class="dropdown-item" routerLink="/policy">Policies</a></li>
-        <li><a class="dropdown-item" routerLink="/announcements">Announcements</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="col-3 nav__search">
-    <div class="form-item">
-      <span><i class="bi bi-search"></i></span>
-      <input type="text" placeholder="Search products..." name="search-keyword" class="form-control">
-    </div>
-  </div>
-  <div class="col-2 nav__icons">
-    <div class="row">
-      <div class="col wish-icon">
-        <a routerLink="/wishlist"><i class="bi bi-heart"></i></a>
-        <div class="wish-value">
-          5
-        </div>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/track">Order tracking</a></li>
+          <li><a class="dropdown-item" routerLink="/contact">Contact us</a></li>
+          <li><a class="dropdown-item" routerLink="/faq">Faqs</a></li>
+        </ul>
       </div>
-      <div class="col cart-icon">
-        <a routerLink="/cart"><i class="bi bi-bag"></i></a>
-        <div class="cart-value">
-          3
-        </div>
+      <div class="dropdown">
+        <button class="nav-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          About Us <i class="bi bi-chevron-down"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="/introduce">About DigiAuctions</a></li>
+          <li><a class="dropdown-item" routerLink="/policy">Policies</a></li>
+          <li><a class="dropdown-item" routerLink="/announcements">Announcements</a></li>
+        </ul>
       </div>
-      <div class="col">
-        <a routerLink="/login"><i class="bi bi-person-circle"></i></a>
+    </div>
+    <div class="col-1 navbar justify-content-end nav-menu">
+      <div class="dropdown">
+<!--        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">-->
+<!--          Login-->
+<!--        </button>-->
+<!--        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
+<!--          <div class="modal-dialog modal-dialog-centered">-->
+<!--            <div class="modal-content">-->
+<!--              <div class="modal-header">-->
+<!--                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>-->
+<!--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--              </div>-->
+<!--              <div class="modal-body">-->
+<!--                ...-->
+<!--              </div>-->
+<!--              <div class="modal-footer">-->
+<!--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--                <button type="button" class="btn btn-primary">Understood</button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+        <a routerLink="/login">
+          <button class="nav-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </button>
+        </a>
       </div>
     </div>
   </div>
 </div>
+
 <!--end of nav bar-->
 <!--body-->
 <section>
@@ -83,73 +173,94 @@
 
 <!--footer-->
 <div class=" main-footer">
-  <div class="row">
-    <div class="col">
-      <a routerLink="/home"><h1 class="brand__logo">DigiAuctions</h1></a>
-      <br>
-      <p><i class="bi bi-geo-alt-fill"></i>  01 Dinh Tien Hoang, Hoan Kiem, Ha Noi</p>
-      <p><i class="bi bi-envelope-at"></i>  bussiness@digiauctions.com</p>
-      <p><i class="bi bi-telephone"></i>  +84 988 888 888</p>
-    </div>
-    <div class="col">
-      <h4>Useful links</h4>
-      <div class="row">
-        <div class="col">
-          <p><a routerLink="#"><i class="bi bi-chevron-double-right"></i> Mobile Phones</a></p>
-        </div>
-        <div class="col">
-          <p><a routerLink="/vendors"><i class="bi bi-chevron-double-right"></i>  Vendors</a></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <p><a routerLink="#"><i class="bi bi-chevron-double-right"></i> Laptops & PC</a></p>
-        </div>
-        <div class="col">
-          <p><a routerLink="/track"><i class="bi bi-chevron-double-right"></i>  Order tracking</a></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <p><a routerLink="#"><i class="bi bi-chevron-double-right"></i>  Tablets</a></p>
-        </div>
-        <div class="col">
-          <p><a routerLink="/faq"><i class="bi bi-chevron-double-right"></i>  Faqs</a></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <p><a routerLink="#"><i class="bi bi-chevron-double-right"></i>  Accessories</a></p>
-        </div>
-        <div class="col">
-          <p><a routerLink="/introduce"><i class="bi bi-chevron-double-right"></i>  About DigiAuctions</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <h4>Subscribe to our Newsletter</h4>
+  <div class="footer-row">
+    <div class="container">
       <div class="row">
         <div class="col-8">
-          <input type="email" placeholder="Enter your e-mail" name="subscribe-email" class="form-control">
+          <h4>Browse through our products library!</h4>
         </div>
         <div class="col-4">
-          <button type="submit" class="form-control">Submit   </button>
+          <div class="col footer-search">
+            <div class="form-item">
+              <span><i class="bi bi-search"></i></span>
+              <input type="text" placeholder="Search products..." name="search-keyword" class="form-control">
+            </div>
+          </div>
         </div>
       </div>
-      <br>
-      <h4>Folow Us on</h4>
+    </div>
+  </div>
+  <div class="footer-info">
+    <div class="container">
       <div class="row">
-        <div class="col nav__icons">
-          <a routerLink="#"><i class="bi bi-facebook"></i></a>
+        <div class="col">
+          <a routerLink="/home"><h1 class="brand__logo">DigiAuctions</h1></a>
+          <br>
+          <p><i class="bi bi-geo-alt-fill"></i>  01 Dinh Tien Hoang, Hoan Kiem, Ha Noi</p>
+          <p><i class="bi bi-envelope-at"></i>  bussiness@digiauctions.com</p>
+          <p><i class="bi bi-telephone"></i>  +84 988 888 888</p>
         </div>
-        <div class="col nav__icons">
-          <a routerLink="#"><i class="bi bi-twitter"></i></a>
+        <div class="col">
+          <h4>Useful links</h4>
+          <div class="row">
+            <div class="col">
+              <p><a routerLink="#"><i class="bi bi-chevron-double-right"></i> Mobile Phones</a></p>
+            </div>
+            <div class="col">
+              <p><a routerLink="/vendors"><i class="bi bi-chevron-double-right"></i>  Vendors</a></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><a routerLink="#"><i class="bi bi-chevron-double-right"></i> Laptops & PC</a></p>
+            </div>
+            <div class="col">
+              <p><a routerLink="/track"><i class="bi bi-chevron-double-right"></i>  Order tracking</a></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><a routerLink="#"><i class="bi bi-chevron-double-right"></i>  Tablets</a></p>
+            </div>
+            <div class="col">
+              <p><a routerLink="/faq"><i class="bi bi-chevron-double-right"></i>  Faqs</a></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p><a routerLink="#"><i class="bi bi-chevron-double-right"></i>  Accessories</a></p>
+            </div>
+            <div class="col">
+              <p><a routerLink="/introduce"><i class="bi bi-chevron-double-right"></i>  About DigiAuctions</a></p>
+            </div>
+          </div>
         </div>
-        <div class="col nav__icons">
-          <a routerLink="#"><i class="bi bi-linkedin"></i></a>
-        </div>
-        <div class="col nav__icons">
-          <a routerLink="#"><i class="bi bi-instagram"></i></a>
+        <div class="col">
+          <h4>Subscribe to our Newsletter</h4>
+          <div class="row">
+            <div class="col-8">
+              <input type="email" placeholder="Enter your e-mail" name="subscribe-email" class="form-control">
+            </div>
+            <div class="col-4">
+              <button type="submit" class="form-control">Submit   </button>
+            </div>
+          </div>
+          <br>
+          <h4>Folow Us on</h4>
+          <div class="row">
+            <div class="col nav__icons">
+              <a routerLink="#"><i class="bi bi-facebook"></i></a>
+            </div>
+            <div class="col nav__icons">
+              <a routerLink="#"><i class="bi bi-twitter"></i></a>
+            </div>
+            <div class="col nav__icons">
+              <a routerLink="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+            <div class="col nav__icons">
+              <a routerLink="#"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,13 @@
 .product-page{
-  margin-top: 100px;
+  margin: 20px 0;
   color: #606060;
+}
+
+.product-page h2{
+  color: #000000;
+}
+.product-page h4{
+  color: #000000;
 }
 
 .product-page .img-section{

@@ -1,5 +1,5 @@
 .store-page{
-  margin: 100px 0 20px;
+  margin: 20px 0;
 }
 .store-page .vendor-contact{
   background-color: rgba(38, 149, 255, 0.1);
@@ -51,9 +51,10 @@
 }
 .store-page .card .card-main .end-date{
   position: relative;
-  background-color: #fa0;
+  background-color: #2695FF;
   font-weight: 700;
   color: #ffffff;
+  /*color: #ffffff;*/
   text-align: center;
   display: block;
   height: 30px;
@@ -65,7 +66,7 @@
   top: 30px;
 }
 .store-page .card .card-main .end-date::after{
-  border-top: 6px solid #c80;
+  border-top: 6px solid #013364;
   content: '';
   position: absolute;
   left: 0;
@@ -75,28 +76,27 @@
 }
 .store-page .card .card-main .cd-timer{
   position: absolute;
-  bottom: 60px;
-  width: 100%;
-  display: flex;
-  align-items: center;
+  bottom: 40px;
   text-align: center;
   justify-content: center;
 }
 .store-page .card .card-main .cd-timer .cd-timer-item{
   display: flex;
   flex-direction: column;
-  height: 50px;
-  width: 50px;
-  margin: 0 5px;
-  color: #ffffff;
-  background-color: rgba(255, 170, 0, 0.8);
-  border-radius: 5px;
+  height: 60px;
+  width: 25%;
+  color: #606060;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 5px 0px 0;
+  box-shadow: 0px 0px 13px 0px #00000040;
 }
 .store-page .card .card-main .cd-timer .cd-timer-item .cd-timer-nbr{
   font-size: 18px;
   font-weight: 700;
 }
-
+.store-page .card .card-main .cd-timer .cd-timer-item .cd-timer-txt{
+  font-size: 12px;
+}
 .store-page .card .card-main .bid-item{
   width: calc(100% + 9px);
   text-align: center;
@@ -152,7 +152,11 @@
   text-decoration: none;
 }
 .store-page .card .card-content .card-price{
-  color: #fa0;
+  color: #606060;
   font-weight: 700;
   font-style: italic;
+}
+.store-page .card .card-content .card-price span{
+  color: #2695FF;
+  font-weight: 700;
 }

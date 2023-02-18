@@ -93,20 +93,21 @@
   <br>
   <div class="row">
     <div class="col product-tab" [class.product-tab-color]="id == 'product-desc'" id="product-desc" (click)="tabChange('product-desc')">
-      <h4>Descriptions</h4>
+      <h5>Descriptions</h5>
     </div>
     <div class="col product-tab" [class.product-tab-color]="id == 'add-info'" id="add-info" (click)="tabChange('add-info')">
-      <h4>Additional informations</h4>
+      <h5>Additional informations</h5>
     </div>
     <div class="col product-tab" [class.product-tab-color]="id == 'bid-history'" id="bid-history" (click)="tabChange('bid-history')">
-      <h4>Auction history</h4>
+      <h5>Auction history</h5>
     </div>
     <div class="col product-tab" [class.product-tab-color]="id == 'vendor-info'" id="vendor-info" (click)="tabChange('vendor-info')">
-      <h4>Vendor informations</h4>
+      <h5>Vendor informations</h5>
     </div>
   </div>
   <div class="tab-content">
     <div class="content-value" *ngIf="id == 'product-desc'">
+
       <p>The iPhone 14 looks identical to the iPhone 13, but there's a new 6.7-inch model called the iPhone 14 Plus. Under-the-hood improvements include 6GB of RAM, a 5-core GPU, Bluetooth 5.3, and multiple camera updates. Color options have been updated with (PRODUCT)RED, blue, purple, midnight, and starlight.</p>
       <p>● 6.1-inch and 6.7-inch display sizes</p>
       <p>● Emergency SOS via satellite</p>
