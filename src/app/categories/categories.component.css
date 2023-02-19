@@ -21,7 +21,6 @@
   background-color: #2695FF;
   font-weight: 700;
   color: #ffffff;
-  /*color: #ffffff;*/
   text-align: center;
   display: block;
   height: 30px;
@@ -60,6 +59,7 @@
 .category-page .card .card-main .cd-timer .cd-timer-item .cd-timer-nbr{
   font-size: 18px;
   font-weight: 700;
+  color: #000000;
 }
 .category-page .card .card-main .cd-timer .cd-timer-item .cd-timer-text{
   font-size: 12px;
