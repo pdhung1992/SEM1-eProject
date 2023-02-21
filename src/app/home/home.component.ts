@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {OwlOptions} from "ngx-owl-carousel-o";
 
 @Component({
   selector: 'app-home',
@@ -26,4 +27,31 @@ export class HomeComponent {
       clearInterval(this.x);
     }
   }, 1000)
+
+
+  itemOptions: OwlOptions = {
+    loop: true,
+    margin: 20,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['<div class="btn-primary"><i class="bi bi-chevron-left"></i></div>', '<div class="btn-primary"><i class="bi bi-chevron-right"></i></div>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
 }

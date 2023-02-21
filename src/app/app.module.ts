@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import {RouterModule, Routes} from "@angular/router";
 
 import { HomeComponent } from './home/home.component';
@@ -21,6 +22,7 @@ import { PoliciesComponent } from './about/policies/policies.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { StoresComponent } from './stores/stores.component';
 import { AnnouncementsComponent } from './about/announcements/announcements.component';
+import { DemoComponent } from './demo/demo.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
   {path: 'policy', component: PoliciesComponent},
   {path: 'track', component: TrackingComponent},
   {path: 'stores', component: StoresComponent},
-  {path: 'announcements', component: AnnouncementsComponent}
+  {path: 'announcements', component: AnnouncementsComponent},
+  {path: 'demo', component: DemoComponent}
 ]
 @NgModule({
   declarations: [
@@ -58,11 +61,13 @@ const appRoutes: Routes = [
     PoliciesComponent,
     TrackingComponent,
     StoresComponent,
-    AnnouncementsComponent
+    AnnouncementsComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
+    CarouselModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
