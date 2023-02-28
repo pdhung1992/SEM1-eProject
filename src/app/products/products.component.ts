@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+// import {Adapters} from "../../enums/adapters";
+// import {ProductService} from "../../services/product.service";
 
 @Component({
   selector: 'app-products',
@@ -10,9 +14,36 @@ export class ProductsComponent {
   hour: number = 0;
   min: number = 0;
   sec: number = 0;
+  desc= '';
+  id = 0;
+  products: any = [];
+
+  constructor(private route: ActivatedRoute,
+              private http : HttpClient,
+              private productService: ProductService)
+{
+  }
+
 
   ngOnInit(){
+    this.route.params.subscribe(params=>{
+      this.id = params['id'];
+      console.log(id);
+      // this.getProduct();
+    })
+    this.productService.getProducts(5).subscribe(data => {
+      this.products = data;
+      console.log(this.products);
+    })
   }
+  // getProduct(){
+  //
+  //   // call api
+  //   this.productService.getProductDetail(this.id)
+  //     .subscribe(data=>{
+  //       this.product = data;
+  //     })
+  // }
 
   x = setInterval(() => {
     var endDate: any = new Date("2023-04-22 17:00:00");

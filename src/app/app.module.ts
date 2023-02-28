@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -10,7 +11,6 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
 import { CategoriesComponent } from './categories/categories.component';
-import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -23,13 +23,14 @@ import { TrackingComponent } from './tracking/tracking.component';
 import { StoresComponent } from './stores/stores.component';
 import { AnnouncementsComponent } from './about/announcements/announcements.component';
 import { DemoComponent } from './demo/demo.component';
+import { ProductsNewComponent } from './products-new/products-new.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'products', component: ProductsComponent},
-  {path: 'categories', component: CategoriesComponent},
+  {path: 'products/:id', component: ProductsNewComponent},
+  {path: 'categories/:cat', component: CategoriesComponent},
   {path:'contact', component: ContactComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
@@ -39,7 +40,7 @@ const appRoutes: Routes = [
   {path: 'faq', component: FaqsComponent},
   {path: 'policy', component: PoliciesComponent},
   {path: 'track', component: TrackingComponent},
-  {path: 'stores', component: StoresComponent},
+  {path: 'stores/:vdr', component: StoresComponent},
   {path: 'announcements', component: AnnouncementsComponent},
   {path: 'demo', component: DemoComponent}
 ]
@@ -50,7 +51,6 @@ const appRoutes: Routes = [
     LoginComponent,
     SignupComponent,
     CategoriesComponent,
-    ProductsComponent,
     ContactComponent,
     CartComponent,
     CheckoutComponent,
@@ -62,12 +62,14 @@ const appRoutes: Routes = [
     TrackingComponent,
     StoresComponent,
     AnnouncementsComponent,
-    DemoComponent
+    DemoComponent,
+    ProductsNewComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     CarouselModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],

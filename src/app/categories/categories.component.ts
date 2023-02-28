@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+import { ProductService } from "../services/product.service";
 
 @Component({
   selector: 'app-categories',
@@ -10,12 +13,35 @@ export class CategoriesComponent {
   hour: number = 0;
   min: number = 0;
   sec: number = 0;
+  img: any = 'test.jpg';
+  products: any = [];
+  cat: any;
+  id:any;
+  date:any;
+  categories: any = [];
+
+  constructor(private route: ActivatedRoute,
+              private http : HttpClient,
+              private productService: ProductService) {
+  }
 
   ngOnInit(){
+    this.route.params.subscribe(params=>{
+      this.cat = params['cat'];
+      console.log(this.cat);
+    })
+    this.productService.getCategories(this.cat).subscribe(data => {
+      this.categories = data;
+      console.log(this.categories);
+    })
+    this.productService.getAllProducts(this.cat).subscribe(data=>{
+      this.products =  data;
+      console.log(this.products);
+    })
   }
 
   x = setInterval(() => {
-    var endDate: any = new Date("2023-04-22 17:00:00");
+    var endDate: any = new Date(this.products.end_time);
     var today: any = new Date();
     var distance = endDate - today;
     this.day = Math.floor(distance / (1000 * 60 * 60 * 24));

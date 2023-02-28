@@ -37,7 +37,7 @@ export class HomeComponent {
     pullDrag: true,
     dots: false,
     navSpeed: 700,
-    navText: ['<div class="btn-primary"><i class="bi bi-chevron-left"></i></div>', '<div class="btn-primary"><i class="bi bi-chevron-right"></i></div>'],
+    navText: ['<div ><i class="bi bi-chevron-left"></i></div>', '<div class="btn-primary"><i class="bi bi-chevron-right"></i></div>'],
     responsive: {
       0: {
         items: 1
