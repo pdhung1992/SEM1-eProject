@@ -23,12 +23,12 @@
   float: right;
   font-weight: 500;
 }
-.page-header .brand-logo h1{
-  color: #2695FF;
-  font-family: 'Knewave', cursive;
+.page-header .brand-logo img{
+  height: 80px;
+  width: auto;
 }
 .page-header .header-search{
- padding-top: 5px;
+ padding-top: 20px;
 }
 .page-header .header-search .form-item{
   position: relative;
@@ -49,6 +49,7 @@
 .page-header .header-cart .header-cart-item{
   display: flex;
   justify-content: end;
+  padding-top: 10px;
 }
 /*nav*/
 .main-navbar{
@@ -163,9 +164,9 @@
   color: #2695FF;
   padding-top: 10px;
 }
-.main-footer .brand__logo{
-  color: #2695FF;
-  font-family: 'Knewave', cursive;
+.main-footer .brand-logo{
+  height: 80px;
+  width: auto;
 }
 .main-footer .form-control{
   border-radius: 15px;
