@@ -41,7 +41,8 @@ export class CategoriesComponent {
   }
 
   x = setInterval(() => {
-    var endDate: any = new Date(this.products.end_time);
+    var i = this.products.id;
+    var endDate: any = new Date(this.products[i].end_time);
     var today: any = new Date();
     var distance = endDate - today;
     this.day = Math.floor(distance / (1000 * 60 * 60 * 24));

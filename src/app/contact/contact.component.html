@@ -14,18 +14,18 @@
       <div class="send-mess">
         <h2>Send us a message</h2>
         <p><i>We'd love to hear from you! Let us know how we can help.</i></p>
-        <form action="#" method="get">
+        <form action="#" method="post" [formGroup]="contactForm" (ngSubmit)="onContact()">
           <div class="row">
             <div class="col">
-              <input type="text" name="mess-name" class="form-control" placeholder="Your name">
+              <input type="text" formControlName="name" class="form-control" placeholder="Your name">
             </div>
             <div class="col">
-              <input type="email" name="mess-email" class="form-control" placeholder="Your e-mail">
+              <input type="email" formControlName="email" class="form-control" placeholder="Your e-mail">
             </div>
           </div>
           <br>
           <div>
-            <textarea name="message" cols="50" rows="5" class="form-control" placeholder="Your message"></textarea>
+            <textarea formControlName="mess" cols="50" rows="5" class="form-control" placeholder="Your message"></textarea>
           </div>
           <br>
           <button type="submit" class="btn btn-lg">Send Message   <i class="bi bi-arrow-right-circle"></i></button>

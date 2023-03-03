@@ -32,15 +32,14 @@
 }
 .page-header .header-search .form-item{
   position: relative;
-  align-items: center;
 }
 .page-header .header-search .form-item input{
-  padding-left: 30px;
+  padding-left: 35px;
 }
 .page-header .header-search .form-item i{
   position: absolute;
-  padding-left: 7px;
-  padding-top: 7px;
+  padding-left: 12px;
+  padding-top: 8px;
   color: black;
 }
 .page-header .header-search .form-control{

@@ -9,7 +9,7 @@
         <div class="col">Order ID</div>
         <div class="col">Billing e-mail</div>
       </div>
-      <form action="#" method="get">
+      <form action="#" method="get" [formGroup]="trackForm" (ngSubmit)="onTrack()">
         <div class="row">
           <div class="col">
             <input type="text" name="track-id" class="form-control" placeholder="Found in your order confirmation e-mail">

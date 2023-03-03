@@ -24,6 +24,8 @@ import { StoresComponent } from './stores/stores.component';
 import { AnnouncementsComponent } from './about/announcements/announcements.component';
 import { DemoComponent } from './demo/demo.component';
 import { ProductsNewComponent } from './products-new/products-new.component';
+import { SearchComponent } from './search/search.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
   {path: 'track', component: TrackingComponent},
   {path: 'stores/:vdr', component: StoresComponent},
   {path: 'announcements', component: AnnouncementsComponent},
-  {path: 'demo', component: DemoComponent}
+  {path: 'demo', component: DemoComponent},
+  {path:'search/:key', component: SearchComponent}
 ]
 @NgModule({
   declarations: [
@@ -63,7 +66,8 @@ const appRoutes: Routes = [
     StoresComponent,
     AnnouncementsComponent,
     DemoComponent,
-    ProductsNewComponent
+    ProductsNewComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +75,8 @@ const appRoutes: Routes = [
     CarouselModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

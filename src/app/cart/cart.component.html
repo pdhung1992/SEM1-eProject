@@ -3,30 +3,31 @@
     <div class="cart-page">
       <h2>Cart</h2>
       <hr>
-      <div class="cart-item">
-        <div class="row">
-          <div class="col-2 cart-img">
-            <img src="assets/images/iPhone-14-thumb.jpg" alt="" class="img-fluid">
-          </div>
-          <div class="col-4 cart-desc">
-            <h5>iPhone 14</h5>
-            <p><i>Vendor: t2210m</i></p>
-          </div>
-          <div class="col-2 cart-price">
-            $ 1000
-          </div>
-          <div class="col-1 cart-qty">
-            1
-          </div>
-          <div class="col-2 cart-total">
-            $ 1000 in total
-          </div>
-          <div class="col-1 cart-remove">
-            <button type="button" class=" cart-remove-btn"> <i class="bi bi-x-lg"></i></button>
+      <div *ngFor="let c of carts; let i = index">
+        <div class="cart-item">
+          <div class="row">
+            <div class="col-2 cart-img">
+              <img src="assets/images/{{c.thumbnail}}" alt="" class="img-fluid">
+            </div>
+            <div class="col-4 cart-desc">
+              <a routerLink="/products/{{c.id}}"><h5>{{c.name}}</h5></a>
+            </div>
+            <div class="col-2 cart-price">
+              $ {{c.price}}
+            </div>
+            <div class="col-1 cart-qty">
+              1
+            </div>
+            <div class="col-2 cart-total">
+              $ {{c.price}} in total
+            </div>
+            <div class="col-1 cart-remove">
+              <button type="button" class=" cart-remove-btn" (click)="removeItem(i)"> <i class="bi bi-x-lg"></i></button>
+            </div>
           </div>
         </div>
+        <br>
       </div>
-      <hr>
       <div class="cart-checkout">
         <a routerLink="/checkout"><button type="button" class="cart-checkout-btn">Proceed to Checkout <i class="bi bi-arrow-right-circle"></i></button></a>
       </div>

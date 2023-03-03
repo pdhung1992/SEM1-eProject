@@ -29,10 +29,12 @@
           <a routerLink=""><img src="assets/images/logo-main.png" alt="" class="img-fluid"></a>
         </div>
         <div class="col header-search">
-          <div class="form-item">
-            <span><i class="bi bi-search"></i></span>
-            <input type="text" placeholder="Search products..." name="search-keyword" class="form-control">
-          </div>
+          <form action="/search" method="get" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+            <div class="form-item">
+              <i class="bi bi-search"></i>
+              <input type="text" placeholder="Search products..." formControlName="name" class="form-control">
+            </div>
+          </form>
         </div>
         <div class="col header-cart">
           <a routerLink="/cart">
@@ -43,7 +45,7 @@
           </div>
           <div class="container-fluid header-cart-item">
             <div>
-              <span>0 Items - $ 0.00</span>
+              <span>{{totalItem}} Items - $ 0.00</span>
             </div>
           </div>
           </a>
@@ -131,26 +133,6 @@
     </div>
     <div class="col-1 navbar justify-content-end nav-menu">
       <div class="dropdown">
-<!--        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">-->
-<!--          Login-->
-<!--        </button>-->
-<!--        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
-<!--          <div class="modal-dialog modal-dialog-centered">-->
-<!--            <div class="modal-content">-->
-<!--              <div class="modal-header">-->
-<!--                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>-->
-<!--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--              </div>-->
-<!--              <div class="modal-body">-->
-<!--                ...-->
-<!--              </div>-->
-<!--              <div class="modal-footer">-->
-<!--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--                <button type="button" class="btn btn-primary">Understood</button>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
         <a routerLink="/login">
           <button class="nav-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Login
@@ -160,8 +142,8 @@
     </div>
   </div>
 </div>
-
 <!--end of nav bar-->
+
 <!--body-->
 <section>
   <div>
@@ -181,10 +163,12 @@
         </div>
         <div class="col-4">
           <div class="col footer-search">
-            <div class="form-item">
-              <span><i class="bi bi-search"></i></span>
-              <input type="text" placeholder="Search products..." name="search-keyword" class="form-control">
-            </div>
+            <form action="/search" method="get" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+              <div class="form-item">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Search products..." formControlName="name" class="form-control">
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -237,14 +221,16 @@
         </div>
         <div class="col">
           <h4>Subscribe to our Newsletter</h4>
+          <form action="#" method="get" [formGroup]="subForm" (ngSubmit)="onSub()">
           <div class="row">
             <div class="col-8">
-              <input type="email" placeholder="Enter your e-mail" name="subscribe-email" class="form-control">
+              <input type="email" placeholder="Enter your e-mail" name="subscribe-email" required class="form-control" >
             </div>
             <div class="col-4">
               <button type="submit" class="form-control">Submit   </button>
             </div>
           </div>
+          </form>
           <br>
           <h4>Folow Us on</h4>
           <div class="row">

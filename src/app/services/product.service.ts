@@ -2,6 +2,7 @@ import {HttpClient} from "@angular/common/http";
 import {Adapters} from "../enums/adapters";
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
+import * as url from "url";
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,10 @@ export class ProductService {
   getProducts(id: number): Observable<any>{
     // const url = Adapters.BASE_URL+ 'products?limit='+limit;
     return this.http.get<any>(`${this.BASE_URL}/group5_products/detail?id=${id}`);
+  }
+  searchProducts(key: string){
+    // const url = Adapters.BASE_URL+ 'products/search?name='+name;
+    return this.http.get<any>(`${this.BASE_URL}/group5_products/search?name=${key}`);
   }
   getAllProducts(id: number): Observable<any>{
     // const url = Adapters.BASE_URL+ 'products?limit='+limit;
@@ -49,9 +54,25 @@ export class ProductService {
     // const url = Adapters.BASE_URL+ 'products/categories';
     return this.http.get<any>(`${this.BASE_URL}/group5_vendors/`);
   }
-
-  searchProducts(name: string){
-    const url = Adapters.BASE_URL+ 'products/search?q='+name;
-    return this.http.get<any>(url);
+  getCarts(){
+    let cartJson = sessionStorage.getItem('cart');
+    if(cartJson){
+      return JSON.parse(cartJson);
+    }
+    else{
+      return [];
+    }
+  }
+  saveCarts(carts: any){
+    let cartJson = JSON.stringify(carts);
+    sessionStorage.setItem('cart', cartJson);
+  }
+  getCartTotalQty(){
+    let carts: any = this.getCarts();
+    let total: number = 0;
+    carts.forEach(() => {
+      total += 1;
+    });
+    return total;
   }
 }
