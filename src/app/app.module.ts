@@ -36,7 +36,7 @@ const appRoutes: Routes = [
   {path:'contact', component: ContactComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
-  {path: 'wishlist', component: WishlistComponent},
+  {path: 'favorites', component: WishlistComponent},
   {path: 'introduce', component: IntroduceComponent},
   {path: 'vendors', component: VendorsComponent},
   {path: 'faq', component: FaqsComponent},

@@ -1,0 +1,147 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5 product-page">
+      <div class="img-section">
+        <div id="product-img" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div *ngFor="let i of images">
+              <div *ngIf="i.product_id == id">
+                <div class="carousel-item active">
+                  <img src="assets/images/{{i.name}}" class="d-block w-100" alt="...">
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#product-img" data-bs-slide="prev">
+            <span aria-hidden="true">
+              <i class="bi bi-chevron-left"></i>
+            </span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#product-img" data-bs-slide="next">
+            <span aria-hidden="true">
+              <i class="bi bi-chevron-right"></i>
+            </span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-7 product-page">
+      <h2>{{products.name}}</h2>
+      <div *ngFor="let c of categories">
+        <div *ngIf="products.category_id == c.id">
+          <h6><i>Categories: <a routerLink="/categories/{{c.id}}">{{c.name}}</a></i></h6>
+        </div>
+      </div>
+      <h4>Current price: $ {{products.current_price}}</h4>
+      <h4>Time left:</h4>
+      <div class="row countdown">
+        <div class="countdown-item">
+          <span class="countdown-item-nbr">{{day}}</span>
+          <span>Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-item-nbr">{{hour}}</span>
+          <span>Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-item-nbr">{{min}}</span>
+          <span>Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-item-nbr">{{sec}}</span>
+          <span>Seconds</span>
+        </div>
+      </div>
+      <br>
+      <h6>Auction end at: {{products.end_time | date: 'yyyy-MMM-dd hh:mm'}}</h6>
+      <br>
+      <div class="row bid-option">
+        <div class="col-5 price-change">
+          <button type="button" (click)="downPrice()" class="qty-btn"><i class="bi bi-dash-lg"></i></button>
+          <div class="price-item">
+            <span><i class="bi bi-currency-dollar"></i></span>
+            <input type="text" value="{{products.buynow_price}}" class="input-group-lg">
+          </div>
+          <button type="button" (click)="upPrice()" class="qty-btn"><i class="bi bi-plus-lg"></i></button>
+        </div>
+        <div class="col">
+          <button type="button" class="bid-option-btn" style="background-color: rgba(38, 149, 255, 1)"><i class="bi bi-hammer"></i></button>
+        </div>
+        <div class="col">
+          <button type="button" class="bid-option-btn" style="background-color: rgba(241, 75, 63, 1)"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="col">
+          <button type="button" class="bid-option-btn" style="background-color: rgba(250, 187, 5, 1)"><i class="bi bi-share"></i></button>
+        </div>
+      </div>
+      <br>
+      <div class="add-cart">
+        <h4>
+          Or buy now for: $ {{products.buynow_price}}
+        </h4>
+        <button type="button" class="add-cart-btn" [disabled]="clicked" (click)="addCart(products); clicked = true; ">Add to Cart <i class="bi bi-bag-plus"></i></button>
+      </div>
+      <br>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col product-tab" [class.product-tab-color]="id1 == 'product-desc'" id="product-desc" (click)="tabChange('product-desc')">
+      <h5>Descriptions</h5>
+    </div>
+    <div class="col product-tab" [class.product-tab-color]="id1 == 'add-info'" id="add-info" (click)="tabChange('add-info')">
+      <h5>Additional informations</h5>
+    </div>
+    <div class="col product-tab" [class.product-tab-color]="id1 == 'bid-history'" id="bid-history" (click)="tabChange('bid-history')">
+      <h5>Auction history</h5>
+    </div>
+    <div class="col product-tab" [class.product-tab-color]="id1 == 'vendor-info'" id="vendor-info" (click)="tabChange('vendor-info')">
+      <h5>Vendor informations</h5>
+    </div>
+  </div>
+  <div class="tab-content">
+    <div class="content-value" *ngIf="id1 == 'product-desc'">
+      {{products.description}}
+    </div>
+    <div class="content-value" *ngIf="id1 == 'add-info'">
+      {{products.additional_info}}
+    </div>
+    <div class="content-value" *ngIf="id1 == 'bid-history'">
+      <table class="table history-table">
+        <div class="row">
+          <div class="col">User</div>
+          <div class="col">Bid</div>
+          <div class="col">Time</div>
+        </div>
+        <hr>
+        <div *ngFor="let h of histories">
+          <div *ngIf="h.product_id == id">
+            <div class="row">
+              <div class="col">
+                <div *ngFor="let u of users">
+                  <div *ngIf="u.id == h.user_id">
+                    {{u.name}}
+                  </div>
+                </div>
+              </div>
+              <div class="col">$ {{h.price}}</div>
+              <div class="col">{{h.auction_time}}</div>
+            </div>
+          </div>
+        </div>
+      </table>
+    </div>
+    <div class="content-value" *ngIf="id1 == 'vendor-info'">
+      <div *ngFor="let v of vendors">
+        <div *ngIf="products.vendor_id == v.id">
+          <h4>Vendor: <a routerLink="/stores/{{v.id}}">{{v.name}}</a></h4>
+          <p>Store ID: {{v.id}}</p>
+          <p>Address: {{v.address}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

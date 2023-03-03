@@ -1,42 +1,39 @@
-.category-page{
+.search-page{
   margin: 20px 0;
   padding: 0 30px;
 }
 
-.category-page h2{
-  color: #000000;
-}
-.category-page .cat-card{
+.search-page .cat-card{
   float: left;
   width: calc(25% - 20px);
   margin:  0 10px;
 }
 
-.category-page .cat-card .card{
+.search-page  .cat-card .card{
   transition: all 0.2s ease-in-out;
   border-radius: 10px;
   box-shadow: 0px 0px 13px 0px #00000040;
   margin-bottom: 20px;
 }
-.category-page .cat-card .card .card-main {
+.search-page .cat-card .card .card-main {
   position: relative;
 }
-.category-page .cat-card .card .card-main .end-date{
+.search-page .cat-card .card .card-main .end-date{
   position: relative;
-  background-color: rgba(38, 149, 255, 0.8);
+  background-color: #2695FF;
   font-weight: 700;
   color: #ffffff;
   text-align: center;
   display: block;
   height: 30px;
-  width: 180px;
+  width: 150px;
   border-radius: 0 15px 15px 0;
   line-height: 30px;
   font-style: italic;
   left:-20px;
   top: 30px;
 }
-.category-page .cat-card .card .card-main .end-date::after{
+.search-page .cat-card .card .card-main .end-date::after{
   border-top: 6px solid #013364;
   content: '';
   position: absolute;
@@ -45,13 +42,13 @@
   border-left: 8px solid transparent;
   border-right: 0px solid transparent;
 }
-.category-page .cat-card .card .card-main .cd-timer{
+.search-page .cat-card .card .card-main .cd-timer{
   position: absolute;
   bottom: 40px;
   text-align: center;
   justify-content: center;
 }
-.category-page .cat-card .card .card-main .cd-timer .cd-timer-item{
+.search-page .cat-card .card .card-main .cd-timer .cd-timer-item{
   display: flex;
   flex-direction: column;
   height: 60px;
@@ -61,16 +58,16 @@
   padding: 5px 0px 0;
   box-shadow: 0px 0px 13px 0px #00000040;
 }
-.category-page .cat-card .card .card-main .cd-timer .cd-timer-item .cd-timer-nbr{
+.search-page .cat-card .card .card-main .cd-timer .cd-timer-item .cd-timer-nbr{
   font-size: 18px;
   font-weight: 700;
   color: #000000;
 }
-.category-page .cat-card .card .card-main .cd-timer .cd-timer-item .cd-timer-text{
+.search-page .cat-card .card .card-main .cd-timer .cd-timer-item .cd-timer-text{
   font-size: 12px;
 }
 
-.category-page .cat-card .card .card-main .bid-item{
+.search-page .cat-card .card .card-main .bid-item{
   width: calc(100% + 33px);
   text-align: center;
   line-height: 45px;
@@ -82,7 +79,7 @@
   left:-20px;
 
 }
-.category-page .cat-card .card .card-main .bid-item::after{
+.search-page .cat-card .card .card-main .bid-item::after{
   border-top: 6px solid #013364;
   content: '';
   position: absolute;
@@ -91,44 +88,44 @@
   border-left: 8px solid transparent;
   border-right: 0px solid transparent;
 }
-.category-page .cat-card .card:hover .card-main .bid-item{
+.search-page .cat-card .card:hover .card-main .bid-item{
   opacity: 1;
   top: 5px;
 }
-.category-page .cat-card .card .card-main .bid-item ul{
+.search-page .cat-card .card .card-main .bid-item ul{
   padding: 0;
   margin: 0;
 }
-.category-page .cat-card .card .card-main .bid-item ul li{
+.search-page  .cat-card .card .card-main .bid-item ul li{
   display: inline-block;
   list-style: none;
   position: relative;
 }
-.category-page .cat-card .card .card-main .bid-item ul li a{
+.search-page .cat-card .card .card-main .bid-item ul li a{
   color: #ffffff;
   margin: 0 20px;
 }
 
 
-.category-page .cat-card .card .card-content{
+.search-page .cat-card .card .card-content{
   padding: 10px 0;
   text-align: center;
 }
-.category-page .cat-card .card .card-content a{
+.search-page .cat-card .card .card-content a{
   font-size: 20px;
   color: #000000;
   font-weight: 700;
   transition: all 0.3s;
 }
-.category-page .cat-card .card .card-content a:hover{
+.search-page .cat-card .card .card-content a:hover{
   color: rgba(38, 149, 255, 1);
   text-decoration: none;
 }
-.category-page .cat-card .card .card-content .card-price{
+.search-page .cat-card .card .card-content .card-price{
   color: #606060;
   font-weight: 700;
   font-style: italic;
 }
-.category-page .cat-card .card .card-content .card-price span{
+.search-page .cat-card .card .card-content .card-price span{
   color: #2695FF;
 }
