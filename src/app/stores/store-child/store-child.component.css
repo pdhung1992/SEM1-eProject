@@ -1,11 +1,10 @@
-
 .cd-timer-item{
   display: flex;
   flex-direction: column;
   height: 60px;
   width: 25%;
   color: #606060;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 1);
   padding: 5px 0px 0;
   box-shadow: 0px 0px 13px 0px #00000040;
 }
@@ -16,5 +15,4 @@
 }
 .cd-timer-text{
   font-size: 12px;
-  font-weight: 700;
 }

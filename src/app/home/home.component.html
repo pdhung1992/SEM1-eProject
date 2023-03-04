@@ -78,207 +78,254 @@
   <br>
   <owl-carousel-o [options]="itemOptions">
     <ng-template carouselSlide>
-      <div class="card">
-        <div class="card-main">
-          <div class="end-date">Apr 22, 17:00</div>
-          <div class="container-fluid cd-timer">
-            <div class="row">
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{day}}</span>
-                <span class="cd-timer-text">Days</span>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.id == 20">
+            <div class="card">
+              <div class="card-main">
+                <div class="end-date" >{{p.end_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
+                <div class="container-fluid cd-timer">
+                  <app-cat-child [endDate]="p.end_time"></app-cat-child>
+                </div>
+                <div class="c-img">
+                  <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+                </div>
+                <div class="bid-item">
+                  <ul>
+                    <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
+                    <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
+                    <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                  </ul>
+                </div>
               </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{hour}}</span>
-                <span class="cd-timer-text">Hours</span>
-              </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{min}}</span>
-                <span class="cd-timer-text">Mins</span>
-              </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{sec}}</span>
-                <span class="cd-timer-text">Secs</span>
+              <div class="card-content">
+                <a routerLink="/products/{{p.id}}">{{p.name}}</a>
+                <p class="card-price">Current price: <span >$ {{p.current_price}}</span></p>
               </div>
             </div>
-          </div>
-          <div class="c-img">
-            <img src="assets/images/iPhone-14-thumb.jpg" alt="" class="img-fluid">
-          </div>
-          <div class="bid-item">
-            <ul>
-              <li><a routerLink="#"><i class="bi bi-hammer"></i></a></li>
-              <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-              <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="card-content">
-          <a routerLink="#">iPhone 14</a>
-          <p class="card-price">Current price: <span >$ 300</span></p>
         </div>
       </div>
     </ng-template>
     <ng-template carouselSlide>
-      <div class="card">
-        <div class="card-main">
-          <div class="end-date">Apr 22, 17:00</div>
-          <div class="container-fluid cd-timer">
-            <div class="row">
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{day}}</span>
-                <span class="cd-timer-text">Days</span>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.id == 5">
+          <div class="card">
+            <div class="card-main">
+              <div class="end-date" >{{p.end_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
+              <div class="container-fluid cd-timer">
+                <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{hour}}</span>
-                <span class="cd-timer-text">Hours</span>
+              <div class="c-img">
+                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
               </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{min}}</span>
-                <span class="cd-timer-text">Mins</span>
-              </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{sec}}</span>
-                <span class="cd-timer-text">Secs</span>
+              <div class="bid-item">
+                <ul>
+                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                </ul>
               </div>
             </div>
+            <div class="card-content">
+              <a routerLink="/products/{{p.id}}">{{p.name}}</a>
+              <p class="card-price">Current price: <span >$ {{p.current_price}}</span></p>
+            </div>
           </div>
-          <div class="c-img">
-            <img src="assets/images/iPhone-14-thumb.jpg" alt="" class="img-fluid">
-          </div>
-          <div class="bid-item">
-            <ul>
-              <li><a routerLink="#"><i class="bi bi-hammer"></i></a></li>
-              <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-              <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="card-content">
-          <a routerLink="#">iPhone 14</a>
-          <p class="card-price">Current price: <span >$ 300</span></p>
         </div>
       </div>
     </ng-template>
     <ng-template carouselSlide>
-      <div class="card">
-        <div class="card-main">
-          <div class="end-date">Apr 22, 17:00</div>
-          <div class="container-fluid cd-timer">
-            <div class="row">
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{day}}</span>
-                <span class="cd-timer-text">Days</span>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.id == 23">
+          <div class="card">
+            <div class="card-main">
+              <div class="end-date" >{{p.end_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
+              <div class="container-fluid cd-timer">
+                <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{hour}}</span>
-                <span class="cd-timer-text">Hours</span>
+              <div class="c-img">
+                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
               </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{min}}</span>
-                <span class="cd-timer-text">Mins</span>
-              </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{sec}}</span>
-                <span class="cd-timer-text">Secs</span>
+              <div class="bid-item">
+                <ul>
+                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                </ul>
               </div>
             </div>
+            <div class="card-content">
+              <a routerLink="/products/{{p.id}}">{{p.name}}</a>
+              <p class="card-price">Current price: <span >$ {{p.current_price}}</span></p>
+            </div>
           </div>
-          <div class="c-img">
-            <img src="assets/images/iPhone-14-thumb.jpg" alt="" class="img-fluid">
-          </div>
-          <div class="bid-item">
-            <ul>
-              <li><a routerLink="#"><i class="bi bi-hammer"></i></a></li>
-              <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-              <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="card-content">
-          <a routerLink="#">iPhone 14</a>
-          <p class="card-price">Current price: <span >$ 300</span></p>
         </div>
       </div>
     </ng-template>
     <ng-template carouselSlide>
-      <div class="card">
-        <div class="card-main">
-          <div class="end-date">Apr 22, 17:00</div>
-          <div class="container-fluid cd-timer">
-            <div class="row">
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{day}}</span>
-                <span class="cd-timer-text">Days</span>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.id == 28">
+          <div class="card">
+            <div class="card-main">
+              <div class="end-date" >{{p.end_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
+              <div class="container-fluid cd-timer">
+                <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{hour}}</span>
-                <span class="cd-timer-text">Hours</span>
+              <div class="c-img">
+                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
               </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{min}}</span>
-                <span class="cd-timer-text">Mins</span>
-              </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{sec}}</span>
-                <span class="cd-timer-text">Secs</span>
+              <div class="bid-item">
+                <ul>
+                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                </ul>
               </div>
             </div>
+            <div class="card-content">
+              <a routerLink="/products/{{p.id}}">{{p.name}}</a>
+              <p class="card-price">Current price: <span >$ {{p.current_price}}</span></p>
+            </div>
           </div>
-          <div class="c-img">
-            <img src="assets/images/iPhone-14-thumb.jpg" alt="" class="img-fluid">
-          </div>
-          <div class="bid-item">
-            <ul>
-              <li><a routerLink="#"><i class="bi bi-hammer"></i></a></li>
-              <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-              <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="card-content">
-          <a routerLink="#">iPhone 14</a>
-          <p class="card-price">Current price: <span >$ 300</span></p>
         </div>
       </div>
     </ng-template>
     <ng-template carouselSlide>
-      <div class="card">
-        <div class="card-main">
-          <div class="end-date">Apr 22, 17:00</div>
-          <div class="container-fluid cd-timer">
-            <div class="row">
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{day}}</span>
-                <span class="cd-timer-text">Days</span>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.id == 49">
+          <div class="card">
+            <div class="card-main">
+              <div class="end-date" >{{p.end_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
+              <div class="container-fluid cd-timer">
+                <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{hour}}</span>
-                <span class="cd-timer-text">Hours</span>
+              <div class="c-img">
+                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
               </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{min}}</span>
-                <span class="cd-timer-text">Mins</span>
-              </div>
-              <div class="col cd-timer-item">
-                <span class="cd-timer-nbr">{{sec}}</span>
-                <span class="cd-timer-text">Secs</span>
+              <div class="bid-item">
+                <ul>
+                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                </ul>
               </div>
             </div>
-          </div>
-          <div class="c-img">
-            <img src="assets/images/iPhone-14-thumb.jpg" alt="" class="img-fluid">
-          </div>
-          <div class="bid-item">
-            <ul>
-              <li><a routerLink="#"><i class="bi bi-hammer"></i></a></li>
-              <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-              <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
-            </ul>
+            <div class="card-content">
+              <a routerLink="/products/{{p.id}}">{{p.name}}</a>
+              <p class="card-price">Current price: <span >$ {{p.current_price}}</span></p>
+            </div>
           </div>
         </div>
-        <div class="card-content">
-          <a routerLink="#">iPhone 14</a>
-          <p class="card-price">Current price: <span >$ 300</span></p>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.id == 64">
+          <div class="card">
+            <div class="card-main">
+              <div class="end-date" >{{p.end_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
+              <div class="container-fluid cd-timer">
+                <app-cat-child [endDate]="p.end_time"></app-cat-child>
+              </div>
+              <div class="c-img">
+                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+              </div>
+              <div class="bid-item">
+                <ul>
+                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-content">
+              <a routerLink="/products/{{p.id}}">{{p.name}}</a>
+              <p class="card-price">Current price: <span >$ {{p.current_price}}</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.id == 68">
+          <div class="card">
+            <div class="card-main">
+              <div class="end-date" >{{p.end_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
+              <div class="container-fluid cd-timer">
+                <app-cat-child [endDate]="p.end_time"></app-cat-child>
+              </div>
+              <div class="c-img">
+                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+              </div>
+              <div class="bid-item">
+                <ul>
+                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-content">
+              <a routerLink="/products/{{p.id}}">{{p.name}}</a>
+              <p class="card-price">Current price: <span >$ {{p.current_price}}</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.id == 114">
+          <div class="card">
+            <div class="card-main">
+              <div class="end-date" >{{p.end_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
+              <div class="container-fluid cd-timer">
+                <app-cat-child [endDate]="p.end_time"></app-cat-child>
+              </div>
+              <div class="c-img">
+                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+              </div>
+              <div class="bid-item">
+                <ul>
+                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-content">
+              <a routerLink="/products/{{p.id}}">{{p.name}}</a>
+              <p class="card-price">Current price: <span >$ {{p.current_price}}</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let p of products">
+        <div *ngIf="p.id == 116">
+          <div class="card">
+            <div class="card-main">
+              <div class="end-date" >{{p.end_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
+              <div class="container-fluid cd-timer">
+                <app-cat-child [endDate]="p.end_time"></app-cat-child>
+              </div>
+              <div class="c-img">
+                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+              </div>
+              <div class="bid-item">
+                <ul>
+                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-content">
+              <a routerLink="/products/{{p.id}}">{{p.name}}</a>
+              <p class="card-price">Current price: <span >$ {{p.current_price}}</span></p>
+            </div>
+          </div>
         </div>
       </div>
     </ng-template>
@@ -291,9 +338,9 @@
 <div class="container">
   <h2 class="text-center">CATEGORIES</h2>
   <div class="row">
-    <div class="col">
+    <div class="col home-cats">
       <figure class="snip1256">
-        <img src="assets/images/iphone-14-1.jpg" alt="sample42"/>
+          <img src="assets/images/iphone-14-1.jpg" alt="sample42" class="img-fluid"/>
         <figcaption>
           <h3>Mobile phones</h3>
           <br>
@@ -302,6 +349,7 @@
           <a routerLink="/categories/phone" class="read-more">See all <i class="bi bi-chevron-right"></i></a>
         </figcaption>
       </figure>
+      <div class="text-center"><h4>Mobile phones</h4></div>
     </div>
     <div class="col">
       <figure class="snip1256">
@@ -314,6 +362,7 @@
           <a routerLink="/categories/laptop-pc" class="read-more">See all <i class="bi bi-chevron-right"></i></a>
         </figcaption>
       </figure>
+      <div class="text-center"><h4>Laptops - PCs</h4></div>
     </div>
     <div class="col">
       <figure class="snip1256">
@@ -326,6 +375,7 @@
           <a routerLink="/categories/tablet" class="read-more">See all <i class="bi bi-chevron-right"></i></a>
         </figcaption>
       </figure>
+      <div class="text-center"><h4>Tablets</h4></div>
     </div>
   </div>
   <br>
@@ -341,6 +391,7 @@
           <a routerLink="/categories/watch" class="read-more">See all <i class="bi bi-chevron-right"></i></a>
         </figcaption>
       </figure>
+      <div class="text-center"><h4>Watches</h4></div>
     </div>
     <div class="col">
       <figure class="snip1256">
@@ -353,6 +404,7 @@
           <a routerLink="/categories/tv-audio" class="read-more">See all <i class="bi bi-chevron-right"></i></a>
         </figcaption>
       </figure>
+      <div class="text-center"><h4>TV - Audio</h4></div>
     </div>
     <div class="col">
       <figure class="snip1256">
@@ -365,6 +417,7 @@
           <a routerLink="/categories/accessory" class="read-more">See all <i class="bi bi-chevron-right"></i></a>
         </figcaption>
       </figure>
+      <div class="text-center"><h4>Accessories</h4></div>
     </div>
   </div>
   <hr>
@@ -374,7 +427,7 @@
 
 <!--how it work-->
 <div class="container how-it-work">
-  <h1 class="text-dark text-center">How It Works</h1>
+  <h2 class="text-dark text-center">HOW IT WORKS</h2>
   <p class="text-center">Easy 3 steps to win</p>
   <div class="row">
     <div class="col">
@@ -393,9 +446,118 @@
       <p class="text-center">Fun - Excitement - Great deals</p>
     </div>
   </div>
+  <hr>
 </div>
-<br>
 <!--end of how it work-->
+
+<!--vendor-->
+<div class="container home-vendors">
+  <h2 class="text-dark text-center">OUR VENDORS</h2>
+  <owl-carousel-o [options]="vendorOptions">
+    <ng-template carouselSlide>
+      <div *ngFor="let v of vendors">
+        <div *ngIf="v.id == 'samsung'">
+          <a routerLink="/stores/{{v.id}}">
+            <img src="assets/images/{{v.thumbnail}}" alt="" class="img-fluid">
+            <h5 class="text-center">{{v.name}}</h5>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let v of vendors">
+        <div *ngIf="v.id == 'apple'">
+          <a routerLink="/stores/{{v.id}}">
+            <img src="assets/images/{{v.thumbnail}}" alt="" class="img-fluid">
+            <h5 class="text-center">{{v.name}}</h5>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let v of vendors">
+        <div *ngIf="v.id == 'dell'">
+          <a routerLink="/stores/{{v.id}}">
+            <img src="assets/images/{{v.thumbnail}}" alt="" class="img-fluid">
+            <h5 class="text-center">{{v.name}}</h5>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let v of vendors">
+        <div *ngIf="v.id == 'xiaomi'">
+          <a routerLink="/stores/{{v.id}}">
+            <img src="assets/images/{{v.thumbnail}}" alt="" class="img-fluid">
+            <h5 class="text-center">{{v.name}}</h5>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let v of vendors">
+        <div *ngIf="v.id == 'oppo'">
+          <a routerLink="/stores/{{v.id}}">
+            <img src="assets/images/{{v.thumbnail}}" alt="" class="img-fluid">
+            <h5 class="text-center">{{v.name}}</h5>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let v of vendors">
+        <div *ngIf="v.id == 'sony'">
+          <a routerLink="/stores/{{v.id}}">
+            <img src="assets/images/{{v.thumbnail}}" alt="" class="img-fluid">
+            <h5 class="text-center">{{v.name}}</h5>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let v of vendors">
+        <div *ngIf="v.id == 'hp'">
+          <a routerLink="/stores/{{v.id}}">
+            <img src="assets/images/{{v.thumbnail}}" alt="" class="img-fluid">
+            <h5 class="text-center">{{v.name}}</h5>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let v of vendors">
+        <div *ngIf="v.id == 'jbl'">
+          <a routerLink="/stores/{{v.id}}">
+            <img src="assets/images/{{v.thumbnail}}" alt="" class="img-fluid">
+            <h5 class="text-center">{{v.name}}</h5>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let v of vendors">
+        <div *ngIf="v.id == 'garmin'">
+          <a routerLink="/stores/{{v.id}}">
+            <img src="assets/images/{{v.thumbnail}}" alt="" class="img-fluid">
+            <h5 class="text-center">{{v.name}}</h5>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div *ngFor="let v of vendors">
+        <div *ngIf="v.id == 'asus'">
+          <a routerLink="/stores/{{v.id}}">
+            <img src="assets/images/{{v.thumbnail}}" alt="" class="img-fluid">
+            <h5 class="text-center">{{v.name}}</h5>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>
+br
+<!--end of vendor-->
 <script>
   $(".hover").mouseleave(
     function () {

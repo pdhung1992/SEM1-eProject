@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
+import {ActivatedRoute} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+import {ProductService} from "../services/product.service";
 
 @Component({
   selector: 'app-home',
@@ -7,26 +10,25 @@ import {OwlOptions} from "ngx-owl-carousel-o";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  day: number = 0;
-  hour: number = 0;
-  min: number = 0;
-  sec: number = 0;
 
-  ngOnInit(){
+  products: any = [];
+  vendors: any = [];
+  id: any;
+  constructor(private route: ActivatedRoute,
+              private http : HttpClient,
+              private productService: ProductService) {
   }
 
-  x = setInterval(() => {
-    var endDate: any = new Date("2023-04-22 17:00:00");
-    var today: any = new Date();
-    var distance = endDate - today;
-    this.day = Math.floor(distance / (1000 * 60 * 60 * 24));
-    this.hour = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-    this.min = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
-    this.sec = Math.floor(distance % (1000 * 60) / (1000));
-    if (distance < 0){
-      clearInterval(this.x);
-    }
-  }, 1000)
+  ngOnInit(){
+    this.productService.getAllProducts(this.id).subscribe(data=>{
+      this.products =  data;
+      console.log(this.products);
+    })
+    this.productService.getVendors(this.productService).subscribe(data => {
+      this.vendors = data;
+      console.log(this.vendors);
+    })
+  }
 
 
   itemOptions: OwlOptions = {
@@ -37,6 +39,9 @@ export class HomeComponent {
     pullDrag: true,
     dots: false,
     navSpeed: 700,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    autoplayHoverPause:false,
     navText: ['<div ><i class="bi bi-chevron-left"></i></div>', '<div class="btn-primary"><i class="bi bi-chevron-right"></i></div>'],
     responsive: {
       0: {
@@ -50,6 +55,34 @@ export class HomeComponent {
       },
       940: {
         items: 4
+      }
+    },
+    nav: true
+  }
+  vendorOptions: OwlOptions = {
+    loop: true,
+    margin: 20,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    autoplayHoverPause:false,
+    navText: ['<div ><i class="bi bi-chevron-left"></i></div>', '<div class="btn-primary"><i class="bi bi-chevron-right"></i></div>'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 4
+      },
+      740: {
+        items: 5
+      },
+      940: {
+        items: 7
       }
     },
     nav: true

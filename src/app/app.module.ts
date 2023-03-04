@@ -28,6 +28,7 @@ import { SearchComponent } from './search/search.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CatChildComponent } from './categories/cat-child/cat-child.component';
 import { StoreChildComponent } from './stores/store-child/store-child.component';
+import { HomeChildComponent } from './home/home-child/home-child.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
@@ -71,7 +72,8 @@ const appRoutes: Routes = [
     ProductsNewComponent,
     SearchComponent,
     CatChildComponent,
-    StoreChildComponent
+    StoreChildComponent,
+    HomeChildComponent
   ],
   imports: [
     BrowserModule,
