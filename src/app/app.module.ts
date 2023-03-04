@@ -26,6 +26,8 @@ import { DemoComponent } from './demo/demo.component';
 import { ProductsNewComponent } from './products-new/products-new.component';
 import { SearchComponent } from './search/search.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CatChildComponent } from './categories/cat-child/cat-child.component';
+import { StoreChildComponent } from './stores/store-child/store-child.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
@@ -36,7 +38,7 @@ const appRoutes: Routes = [
   {path:'contact', component: ContactComponent},
   {path: 'cart', component: CartComponent},
   {path: 'checkout', component: CheckoutComponent},
-  {path: 'favorites', component: WishlistComponent},
+  {path: 'wishlist', component: WishlistComponent},
   {path: 'introduce', component: IntroduceComponent},
   {path: 'vendors', component: VendorsComponent},
   {path: 'faq', component: FaqsComponent},
@@ -45,7 +47,7 @@ const appRoutes: Routes = [
   {path: 'stores/:vdr', component: StoresComponent},
   {path: 'announcements', component: AnnouncementsComponent},
   {path: 'demo', component: DemoComponent},
-  {path:'search/:key', component: SearchComponent}
+  {path:'search/:key', component: SearchComponent},
 ]
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ const appRoutes: Routes = [
     AnnouncementsComponent,
     DemoComponent,
     ProductsNewComponent,
-    SearchComponent
+    SearchComponent,
+    CatChildComponent,
+    StoreChildComponent
   ],
   imports: [
     BrowserModule,
@@ -81,4 +85,4 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -31,7 +31,7 @@
       <h2>{{products.name}}</h2>
       <div *ngFor="let c of categories">
         <div *ngIf="products.category_id == c.id">
-          <h6><i>Categories: <a routerLink="/categories/{{c.id}}">{{c.name}}</a></i></h6>
+          <h6><i>Categories: <a routerLink="/categories/{{c.id}}" style="color: #2695FF">{{c.name}}</a></i></h6>
         </div>
       </div>
       <h4>Current price: $ {{products.current_price}}</h4>
@@ -55,7 +55,7 @@
         </div>
       </div>
       <br>
-      <h6>Auction end at: {{products.end_time | date: 'yyyy-MMM-dd hh:mm'}}</h6>
+      <h6>Auction end at: {{products.end_time | date: 'yyyy-MMM-dd HH:mm'}}</h6>
       <br>
       <div class="row bid-option">
         <div class="col-5 price-change">
@@ -70,7 +70,7 @@
           <button type="button" class="bid-option-btn" style="background-color: rgba(38, 149, 255, 1)"><i class="bi bi-hammer"></i></button>
         </div>
         <div class="col">
-          <button type="button" class="bid-option-btn" style="background-color: rgba(241, 75, 63, 1)"><i class="bi bi-heart"></i></button>
+          <button type="button" class="bid-option-btn" (click)="addWish(products)" style="background-color: rgba(241, 75, 63, 1)"><i class="bi bi-heart"></i></button>
         </div>
         <div class="col">
           <button type="button" class="bid-option-btn" style="background-color: rgba(250, 187, 5, 1)"><i class="bi bi-share"></i></button>
@@ -127,7 +127,7 @@
                 </div>
               </div>
               <div class="col">$ {{h.price}}</div>
-              <div class="col">{{h.auction_time}}</div>
+              <div class="col">{{h.auction_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
             </div>
           </div>
         </div>

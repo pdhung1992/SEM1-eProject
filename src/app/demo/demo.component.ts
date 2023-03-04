@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-demo',
@@ -9,30 +9,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class DemoComponent {
   ngOnInit(){
   }
+  data: any;
+  @Input() endDate: any;
 
-  customOptions: OwlOptions = {
-    loop: true,
-    margin: 20,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: false,
-    navSpeed: 700,
-    navText: ['<i class="bi bi-chevron-left"></i> Previous', 'Next <i class="bi bi-chevron-right"></i>'],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
-        items: 3
-      },
-      940: {
-        items: 4
-      }
-    },
-    nav: true
-  }
 }

@@ -63,9 +63,9 @@ export class ProductService {
       return [];
     }
   }
-  saveCarts(carts: any){
-    let cartJson = JSON.stringify(carts);
-    sessionStorage.setItem('cart', cartJson);
+  saveCarts(wishes: any){
+    let wishJson = JSON.stringify(wishes);
+    sessionStorage.setItem('wish', wishJson);
   }
   getCartTotalQty(){
     let carts: any = this.getCarts();
@@ -74,5 +74,18 @@ export class ProductService {
       total += 1;
     });
     return total;
+  }
+  getWish(){
+    let wishJson = sessionStorage.getItem('wish');
+    if(wishJson){
+      return JSON.parse(wishJson);
+    }
+    else{
+      return [];
+    }
+  }
+  saveWish(wishes: any){
+    let wishJson = JSON.stringify(wishes);
+    sessionStorage.setItem('wish', wishJson);
   }
 }

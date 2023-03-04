@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {ProductService} from "./services/product.service";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,7 @@ export class AppComponent {
     name: new FormControl(),
   });
   subForm: FormGroup = new FormGroup({
-    email: new FormControl('', Validators.required)
+    email: new FormControl('',[Validators.required])
   });
   ngOnInit(){
 
@@ -35,8 +36,17 @@ export class AppComponent {
   }
   onSub(){
     this.submited = true;
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Thanks for subscribe us!',
+      })
     if(this.subForm.invalid){
-      alert('Please enter your e-mail!');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please enter your E-mail!',
+      })
     }
   }
 

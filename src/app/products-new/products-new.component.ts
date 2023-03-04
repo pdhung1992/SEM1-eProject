@@ -23,6 +23,7 @@ export class ProductsNewComponent {
   images: any;
   vendors: any;
   carts: any = this.productService.getCarts();
+  wishes: any = this.productService.getWish();
   clicked = false;
 
   constructor(private route: ActivatedRoute,
@@ -61,6 +62,7 @@ export class ProductsNewComponent {
   }
 
   x = setInterval(() => {
+    console.log(this.products.end_time)
     var endDate: any = new Date(this.products.end_time);
     var today: any = new Date();
     var distance = endDate - today;
@@ -100,6 +102,23 @@ export class ProductsNewComponent {
       icon: 'success',
       title: 'Added',
       text: 'This product has been add to Cart!',
+    })
+  }
+  addWish(products: any){
+    let wishItem: any = {
+      id: products.id,
+      name: products.name,
+      price: products.buynow_price,
+      thumbnail: products.thumbnail
+    };
+    this.wishes.push(wishItem);
+    let wishJson = JSON.stringify(this.wishes);
+    sessionStorage.setItem('wish', wishJson);
+    console.log(wishJson);
+    Swal.fire({
+      icon: 'success',
+      title: 'Added',
+      text: 'This product has been add to Wishlist!',
     })
   }
 

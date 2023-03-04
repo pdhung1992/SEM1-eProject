@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <div class="category-page">
@@ -12,26 +13,9 @@
           <div class="col-3 row cat-card">
             <div class="card">
               <div class="card-main">
-                <div class="end-date">{{p.end_time | date: 'yyyy-MMM-dd hh:mm'}}</div>
+                <div class="end-date" >{{p.end_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
                 <div class="container-fluid cd-timer">
-                  <div class="row">
-                    <div class="col cd-timer-item">
-                      <span class="cd-timer-nbr">{{day}}</span>
-                      <span class="cd-timer-text">Days</span>
-                    </div>
-                    <div class="col cd-timer-item">
-                      <span class="cd-timer-nbr">{{hour}}</span>
-                      <span class="cd-timer-text">Hours</span>
-                    </div>
-                    <div class="col cd-timer-item">
-                      <span class="cd-timer-nbr">{{min}}</span>
-                      <span class="cd-timer-text">Mins</span>
-                    </div>
-                    <div class="col cd-timer-item">
-                      <span class="cd-timer-nbr">{{sec}}</span>
-                      <span class="cd-timer-text">Secs</span>
-                    </div>
-                  </div>
+                  <app-cat-child [endDate]="p.end_time"></app-cat-child>
                 </div>
                 <div class="c-img">
                   <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
@@ -55,3 +39,4 @@
     </div>
   </div>
 </div>
+
