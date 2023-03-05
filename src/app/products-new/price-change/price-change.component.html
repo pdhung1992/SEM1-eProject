@@ -1,0 +1,8 @@
+<div class="price-change">
+  <button type="button" (click)="downPrice()" class="qty-btn"><i class="bi bi-dash-lg"></i></button>
+  <div class="price-item">
+    <span><i class="bi bi-currency-dollar"></i></span>
+    <input type="text" value="{{newPrice}}" formControlName="price" class="input-group-lg">
+  </div>
+  <button type="button" (click)="upPrice()" class="qty-btn"><i class="bi bi-plus-lg"></i></button>
+</div>

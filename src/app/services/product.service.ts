@@ -16,10 +16,13 @@ export class ProductService {
     // const url = Adapters.BASE_URL+ 'products/categories';
     return this.http.get<any>(`${this.BASE_URL}/group5_categories/`);
   }
+  getCategoriesDetail(id: any): Observable<any>{
+    // const url = Adapters.BASE_URL+ 'products/categories';
+    return this.http.get<any>(`${this.BASE_URL}/group5_categories/detail?id=${id}`);
+  }
 
-  getCategoryDetail(id: any){
-    const url = Adapters.BASE_URL+ 'categories/'+ id;
-    return this.http.get<any>(url);
+  getCategoryProd(cat: any){
+    return this.http.get<any>(`${this.BASE_URL}/group5_products/category?name=${cat}`);
   }
 
   getProducts(id: number): Observable<any>{
@@ -54,6 +57,14 @@ export class ProductService {
     // const url = Adapters.BASE_URL+ 'products/categories';
     return this.http.get<any>(`${this.BASE_URL}/group5_vendors/`);
   }
+  getVendorsDetail(id: any): Observable<any>{
+    // const url = Adapters.BASE_URL+ 'products/categories';
+    return this.http.get<any>(`${this.BASE_URL}/group5_vendors/detail?id=${id}`);
+  }
+  getVendorProd(vdr: any){
+    return this.http.get<any>(`${this.BASE_URL}/group5_products/vendor?name=${vdr}`);
+  }
+
   getCarts(){
     let cartJson = sessionStorage.getItem('cart');
     if(cartJson){
@@ -63,9 +74,9 @@ export class ProductService {
       return [];
     }
   }
-  saveCarts(wishes: any){
-    let wishJson = JSON.stringify(wishes);
-    sessionStorage.setItem('wish', wishJson);
+  saveCarts(carts: any){
+    let wishJson = JSON.stringify(carts);
+    sessionStorage.setItem('cart', wishJson);
   }
   getCartTotalQty(){
     let carts: any = this.getCarts();

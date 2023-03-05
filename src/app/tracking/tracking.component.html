@@ -12,10 +12,10 @@
       <form action="#" method="get" [formGroup]="trackForm" (ngSubmit)="onTrack()">
         <div class="row">
           <div class="col">
-            <input type="text" name="track-id" class="form-control" placeholder="Found in your order confirmation e-mail">
+            <input type="text" formControlName="id" class="form-control" placeholder="Found in your order confirmation e-mail">
           </div>
           <div class="col">
-            <input type="email" name="track-email" class="form-control" placeholder="The e-mail you used during check out">
+            <input type="email" formControlName="email" class="form-control" placeholder="The e-mail you used during check out">
           </div>
         </div>
         <br>

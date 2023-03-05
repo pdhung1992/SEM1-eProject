@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {ProductService} from "../services/product.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-search',
@@ -16,6 +17,10 @@ export class SearchComponent {
   sec: number = 0;
   key:any;
   result:any;
+  wishes: any = this.productService.getWish();
+  r=[];
+  page=1;
+
   constructor(private route: ActivatedRoute,
               private http : HttpClient,
               private productService: ProductService)
@@ -41,4 +46,22 @@ export class SearchComponent {
       clearInterval(this.x);
     }
   }, 1000)
+
+  addWish(r: any) {
+    let wishItem: any = {
+      id: r.id,
+      name: r.name,
+      price: r.buynow_price,
+      thumbnail: r.thumbnail
+    };
+    this.wishes.push(wishItem);
+    let wishJson = JSON.stringify(this.wishes);
+    sessionStorage.setItem('wish', wishJson);
+    console.log(wishJson);
+    Swal.fire({
+      icon: 'success',
+      title: 'Added',
+      text: 'This product has been add to Wishlist!',
+    })
+  }
 }

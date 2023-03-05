@@ -3,6 +3,7 @@ import {OwlOptions} from "ngx-owl-carousel-o";
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {ProductService} from "../services/product.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,9 @@ export class HomeComponent {
   products: any = [];
   vendors: any = [];
   id: any;
+  wishes: any = this.productService.getWish();
+  p=[];
+
   constructor(private route: ActivatedRoute,
               private http : HttpClient,
               private productService: ProductService) {
@@ -41,7 +45,7 @@ export class HomeComponent {
     navSpeed: 700,
     autoplay: true,
     autoplaySpeed: 5000,
-    autoplayHoverPause:false,
+    autoplayHoverPause:true,
     navText: ['<div ><i class="bi bi-chevron-left"></i></div>', '<div class="btn-primary"><i class="bi bi-chevron-right"></i></div>'],
     responsive: {
       0: {
@@ -69,7 +73,7 @@ export class HomeComponent {
     navSpeed: 700,
     autoplay: true,
     autoplaySpeed: 5000,
-    autoplayHoverPause:false,
+    autoplayHoverPause:true,
     navText: ['<div ><i class="bi bi-chevron-left"></i></div>', '<div class="btn-primary"><i class="bi bi-chevron-right"></i></div>'],
     responsive: {
       0: {
@@ -86,5 +90,23 @@ export class HomeComponent {
       }
     },
     nav: true
+  }
+
+  addWish(p: any) {
+    let wishItem: any = {
+      id: p.id,
+      name: p.name,
+      price: p.buynow_price,
+      thumbnail: p.thumbnail
+    };
+    this.wishes.push(wishItem);
+    let wishJson = JSON.stringify(this.wishes);
+    sessionStorage.setItem('wish', wishJson);
+    console.log(wishJson);
+    Swal.fire({
+      icon: 'success',
+      title: 'Added',
+      text: 'This product has been add to Wishlist!',
+    })
   }
 }

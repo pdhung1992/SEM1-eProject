@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import { ProductService } from "../services/product.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./products-new.component.css']
 })
 export class ProductsNewComponent {
+
   day: number = 0;
   hour: number = 0;
   min: number = 0;
@@ -25,6 +27,8 @@ export class ProductsNewComponent {
   carts: any = this.productService.getCarts();
   wishes: any = this.productService.getWish();
   clicked = false;
+  submited: boolean = false;
+
 
   constructor(private route: ActivatedRoute,
               private http : HttpClient,
@@ -59,6 +63,7 @@ export class ProductsNewComponent {
       this.vendors = data;
       console.log(this.vendors);
     })
+    console.log(this.carts)
   }
 
   x = setInterval(() => {
@@ -75,16 +80,28 @@ export class ProductsNewComponent {
     }
   }, 1000)
 
+  bidForm: FormGroup =  new FormGroup({
+    price: new FormControl(),
+  });
 
-  updatePrice(idx: number, price: number){
-
-  }
-  upPrice(){
-
-  }
-
-  downPrice(){
-
+  onBid(){
+    this.submited = true;
+    Swal.fire({
+      title: 'Are you sure?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#2695ff',
+      cancelButtonColor: '#DC3545',
+      confirmButtonText: 'Yes, save my Bid!'
+    }).then(function (isConfirm: any){
+      if (isConfirm.isConfirmed) {
+        Swal.fire(
+          'Saved!',
+          'Your bid has been saved.',
+          'success'
+        )
+      }
+    })
   }
 
   addCart(products: any){

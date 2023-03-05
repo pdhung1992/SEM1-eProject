@@ -87,13 +87,13 @@
                   <app-cat-child [endDate]="p.end_time"></app-cat-child>
                 </div>
                 <div class="c-img">
-                  <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+                  <a routerLink="/products/{{p.id}}"><img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid"></a>
                 </div>
                 <div class="bid-item">
                   <ul>
-                    <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
-                    <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-                    <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                    <li><a routerLink="/products/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
+                    <li><a routerLink="#" (click)="addWish(p)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+                    <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
                   </ul>
                 </div>
               </div>
@@ -115,13 +115,13 @@
                 <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
               <div class="c-img">
-                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+                <a routerLink="/products/{{p.id}}"><img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid"></a>
               </div>
               <div class="bid-item">
                 <ul>
-                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                  <li><a routerLink="/products/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#" (click)="addWish(p)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -143,13 +143,13 @@
                 <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
               <div class="c-img">
-                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+                <a routerLink="/products/{{p.id}}"><img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid"></a>
               </div>
               <div class="bid-item">
                 <ul>
-                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                  <li><a routerLink="/products/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#" (click)="addWish(p)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -171,13 +171,13 @@
                 <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
               <div class="c-img">
-                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+                <a routerLink="/products/{{p.id}}"><img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid"></a>
               </div>
               <div class="bid-item">
                 <ul>
-                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                  <li><a routerLink="/products/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#" (click)="addWish(p)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -199,13 +199,13 @@
                 <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
               <div class="c-img">
-                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+                <a routerLink="/products/{{p.id}}"><img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid"></a>
               </div>
               <div class="bid-item">
                 <ul>
-                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                  <li><a routerLink="/products/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#" (click)="addWish(p)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -227,13 +227,13 @@
                 <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
               <div class="c-img">
-                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+                <a routerLink="/products/{{p.id}}"><img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid"></a>
               </div>
               <div class="bid-item">
                 <ul>
-                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                  <li><a routerLink="/products/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#" (click)="addWish(p)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -255,13 +255,13 @@
                 <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
               <div class="c-img">
-                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+                <a routerLink="/products/{{p.id}}"><img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid"></a>
               </div>
               <div class="bid-item">
                 <ul>
-                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                  <li><a routerLink="/products/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#" (click)="addWish(p)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -283,13 +283,13 @@
                 <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
               <div class="c-img">
-                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+                <a routerLink="/products/{{p.id}}"><img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid"></a>
               </div>
               <div class="bid-item">
                 <ul>
-                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                  <li><a routerLink="/products/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#" (click)="addWish(p)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -311,13 +311,13 @@
                 <app-cat-child [endDate]="p.end_time"></app-cat-child>
               </div>
               <div class="c-img">
-                <img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid">
+                <a routerLink="/products/{{p.id}}"><img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid"></a>
               </div>
               <div class="bid-item">
                 <ul>
-                  <li><a routerLink="/products/{{p.id}}"><i class="bi bi-hammer"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                  <li><a routerLink="/products/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#" (click)="addWish(p)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -351,7 +351,7 @@
       </figure>
       <div class="text-center"><h4>Mobile phones</h4></div>
     </div>
-    <div class="col">
+    <div class="col home-cats">
       <figure class="snip1256">
         <img src="assets/images/laptop.jpg" alt="sample20"/>
         <figcaption>
@@ -364,7 +364,7 @@
       </figure>
       <div class="text-center"><h4>Laptops - PCs</h4></div>
     </div>
-    <div class="col">
+    <div class="col home-cats">
       <figure class="snip1256">
         <img src="assets/images/tablet.jpg" alt="sample20" class="img-fluid"/>
         <figcaption>
@@ -380,7 +380,7 @@
   </div>
   <br>
   <div class="row">
-    <div class="col">
+    <div class="col home-cats">
       <figure class="snip1256">
         <img src="assets/images/watch.jpg" alt="sample20"/>
         <figcaption>
@@ -393,7 +393,7 @@
       </figure>
       <div class="text-center"><h4>Watches</h4></div>
     </div>
-    <div class="col">
+    <div class="col home-cats">
       <figure class="snip1256">
         <img src="assets/images/tv.jpg" alt="sample20"/>
         <figcaption>
@@ -406,7 +406,7 @@
       </figure>
       <div class="text-center"><h4>TV - Audio</h4></div>
     </div>
-    <div class="col">
+    <div class="col home-cats">
       <figure class="snip1256">
         <img src="assets/images/acessory.jpg" alt="sample20"/>
         <figcaption>
@@ -564,4 +564,9 @@ br
       $(this).removeClass("hover");
     }
   );
+</script>
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
 </script>

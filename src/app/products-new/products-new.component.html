@@ -57,25 +57,22 @@
       <br>
       <h6>Auction end at: {{products.end_time | date: 'yyyy-MMM-dd HH:mm'}}</h6>
       <br>
-      <div class="row bid-option">
-        <div class="col-5 price-change">
-          <button type="button" (click)="downPrice()" class="qty-btn"><i class="bi bi-dash-lg"></i></button>
-          <div class="price-item">
-            <span><i class="bi bi-currency-dollar"></i></span>
-            <input type="text" value="{{products.buynow_price}}" class="input-group-lg">
+      <form action="#" method="get" [formGroup]="bidForm" (ngSubmit)="onBid()">
+        <div class="row bid-option">
+          <div class="col-5">
+            <app-price-change [newPrice]="products.current_price +1" [bidPrice]="products.current_price"></app-price-change>
           </div>
-          <button type="button" (click)="upPrice()" class="qty-btn"><i class="bi bi-plus-lg"></i></button>
+          <div class="col">
+            <button type="submit" class="bid-option-btn" data-toggle="tooltip" data-placement="top" title="Bid with this price" style="background-color: rgba(38, 149, 255, 1)"><i class="bi bi-hammer"></i></button>
+          </div>
+          <div class="col">
+            <button type="button" class="bid-option-btn" data-toggle="tooltip" data-placement="top" title="Add to Wishlist" (click)="addWish(products)" style="background-color: rgba(241, 75, 63, 1)"><i class="bi bi-heart"></i></button>
+          </div>
+          <div class="col">
+            <button type="button" class="bid-option-btn" data-toggle="tooltip" data-placement="top" title="Share" style="background-color: rgba(250, 187, 5, 1)"><i class="bi bi-share"></i></button>
+          </div>
         </div>
-        <div class="col">
-          <button type="button" class="bid-option-btn" style="background-color: rgba(38, 149, 255, 1)"><i class="bi bi-hammer"></i></button>
-        </div>
-        <div class="col">
-          <button type="button" class="bid-option-btn" (click)="addWish(products)" style="background-color: rgba(241, 75, 63, 1)"><i class="bi bi-heart"></i></button>
-        </div>
-        <div class="col">
-          <button type="button" class="bid-option-btn" style="background-color: rgba(250, 187, 5, 1)"><i class="bi bi-share"></i></button>
-        </div>
-      </div>
+      </form>
       <br>
       <div class="add-cart">
         <h4>
@@ -145,3 +142,8 @@
   </div>
 </div>
 
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>

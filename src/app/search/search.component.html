@@ -5,39 +5,22 @@
         Search results for <i>"{{key}}"</i> :
       </h2>
       <hr>
-      <div *ngFor="let r of result">
+      <div *ngFor="let r of result | paginate: { itemsPerPage: 20, currentPage: page }">
         <div class="col-3 row cat-card">
           <div class="card">
             <div class="card-main">
               <div class="end-date">{{r.end_time | date: 'yyyy-MMM-dd HH:mm'}}</div>
               <div class="container-fluid cd-timer">
-                <div class="row">
-                  <div class="col cd-timer-item">
-                    <span class="cd-timer-nbr">{{day}}</span>
-                    <span class="cd-timer-text">Days</span>
-                  </div>
-                  <div class="col cd-timer-item">
-                    <span class="cd-timer-nbr">{{hour}}</span>
-                    <span class="cd-timer-text">Hours</span>
-                  </div>
-                  <div class="col cd-timer-item">
-                    <span class="cd-timer-nbr">{{min}}</span>
-                    <span class="cd-timer-text">Mins</span>
-                  </div>
-                  <div class="col cd-timer-item">
-                    <span class="cd-timer-nbr">{{sec}}</span>
-                    <span class="cd-timer-text">Secs</span>
-                  </div>
-                </div>
+                <app-search-child [endDate]="r.end_time"></app-search-child>
               </div>
               <div class="c-img">
-                <img src="assets/images/{{r.thumbnail}}" alt="" class="img-fluid">
+                <a routerLink="/products/{{r.id}}"><img src="assets/images/{{r.thumbnail}}" alt="" class="img-fluid"></a>
               </div>
               <div class="bid-item">
                 <ul>
-                  <li><a routerLink="/products/{{r.id}}"><i class="bi bi-hammer"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-heart"></i></a></li>
-                  <li><a routerLink="#"><i class="bi bi-share-fill"></i></a></li>
+                  <li><a routerLink="/products/{{r.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
+                  <li><a routerLink="#" (click)="addWish(r)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+                  <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -49,5 +32,6 @@
         </div>
       </div>
     </div>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
   </div>
 </div>

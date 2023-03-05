@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import { ProductService } from "../services/product.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-stores',
@@ -14,6 +15,9 @@ export class StoresComponent {
   vdr:any;
   vendors:any;
   products: any;
+  p=[];
+  page=1;
+  wishes: any = this.productService.getWish();
 
   constructor(private route: ActivatedRoute,
               private http : HttpClient,
@@ -29,22 +33,43 @@ export class StoresComponent {
   onSMess(){
     this.submited = true;
     if(this.sMessForm.invalid){
-      alert('Please fully enter all field: Name, E-mail and Message!');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please fully enter your Name, E-mail and Message!',
+      })
     }
   }
   ngOnInit(){
     this.route.params.subscribe(params=>{
       this.vdr = params['vdr'];
-      console.log(this.vdr);
-    })
-    this.productService.getVendors(this.vdr).subscribe(data => {
-      this.vendors = data;
-      console.log(this.vendors);
-    })
-    this.productService.getAllProducts(this.vdr).subscribe(data=>{
-      this.products =  data;
-      console.log(this.products);
+      this.productService.getVendorProd(this.vdr).subscribe(data=>{
+        this.products =  data;
+      })
+      this.productService.getVendorsDetail(this.vdr).subscribe(data => {
+        this.vendors = data;
+        console.log(this.vdr);
+        console.log(this.vendors)
+        console.log(this.products);
+      })
     })
   }
 
+  addWish(p: any) {
+    let wishItem: any = {
+      id: p.id,
+      name: p.name,
+      price: p.buynow_price,
+      thumbnail: p.thumbnail
+    };
+    this.wishes.push(wishItem);
+    let wishJson = JSON.stringify(this.wishes);
+    sessionStorage.setItem('wish', wishJson);
+    console.log(wishJson);
+    Swal.fire({
+      icon: 'success',
+      title: 'Added',
+      text: 'This product has been add to Wishlist!',
+    })
+  }
 }

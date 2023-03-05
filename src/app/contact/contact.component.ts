@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-contact',
@@ -23,7 +24,11 @@ export class ContactComponent {
   onContact(){
     this.submited = true;
     if(this.contactForm.invalid){
-      alert('Please fully enter all field: Name, E-mail and Message!')
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please fully enter your Name, E-mail and Message!',
+      })
     }
   }
 }

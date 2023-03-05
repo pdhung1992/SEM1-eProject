@@ -32,13 +32,13 @@ export class CartComponent {
       confirmButtonText: 'Yes, delete it!'
     }).then(function (isConfirm: any){
       if (isConfirm.isConfirmed) {
+        _this.carts.splice(idx,1);
+        _this.productService.saveCarts(_this.carts);
         Swal.fire(
           'Deleted!',
           'Your product has been deleted.',
           'success'
         )
-        _this.carts.splice(idx,1);
-        _this.productService.saveCarts(_this.carts);
       }
     })
 

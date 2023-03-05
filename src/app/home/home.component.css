@@ -180,7 +180,21 @@ header {
   position: relative;
 }
 .home-cats h4{
- color: #606060;
+ color: #ffffff;
+  position: absolute;
+  bottom: 20px;
+  margin: 10px;
+  padding: 10px 0;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 220px;
+  width: 100%;
+  /*border-radius: 0 0 10px 10px;*/
+  background-color: rgba(38, 149, 255, 0.8);
+  opacity: 1;
+}
+.home-cats:hover h4{
+  opacity: 0;
 }
 figure.snip1256 {
   font-family: 'Montserrat', sans-serif;

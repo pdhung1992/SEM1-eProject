@@ -55,37 +55,6 @@
 .bid-option{
   display: flex;
 }
-.bid-option .price-change{
-  display: flex;
-  align-items: center;
-  border: 1px solid rgba(38, 149, 255, 1);
-  border-radius: 10px;
-}
-.bid-option .price-change .qty-btn{
-  margin-right: 10px;
-  border: none;
-  background-color: #ffffff;
-}
-.bid-option .price-change .qty-btn i{
-  font-size: 30px;
-}
-.bid-option .price-change .price-item{
-  position: relative;
-  align-items: center;
-}
-.bid-option .price-change .price-item i{
-  position: absolute;
-  padding-left: 10px;
-  padding-top: 1px;
-  font-size: 20px;
-}
-.bid-option .price-change .price-item input{
-  padding-left: 35px;
-  width: 80%;
-  border: none;
-  text-align: center;
-  font-size: 20px;
-}
 .bid-option .bid-option-btn{
   margin: 0 5px;
   width: 100%;

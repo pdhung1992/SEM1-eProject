@@ -1,0 +1,32 @@
+.price-change{
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(38, 149, 255, 1);
+  border-radius: 10px;
+}
+ .price-change .qty-btn{
+  margin-right: 10px;
+   margin-left: 10px;
+  border: none;
+  background-color: #ffffff;
+}
+.price-change .qty-btn i{
+  font-size: 30px;
+}
+.price-change .price-item{
+  position: relative;
+  align-items: center;
+}
+ .price-change .price-item i{
+  position: absolute;
+  padding-left: 10px;
+  padding-top: 1px;
+  font-size: 20px;
+}
+ .price-change .price-item input{
+  padding-left: 35px;
+  width: 80%;
+  border: none;
+  text-align: center;
+  font-size: 20px;
+}

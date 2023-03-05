@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tracking',
@@ -19,7 +20,11 @@ export class TrackingComponent {
   onTrack(){
     this.submited = true;
     if(this.trackForm.invalid){
-      alert('Please fully enter all field: Order ID and E-mail!');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Please fully enter your Order ID and E-mail!',
+      })
     }
   }
 }

@@ -45,7 +45,7 @@
           </div>
           <div class="container-fluid header-cart-item">
             <div>
-              <span>{{totalItem}} Items - $ 0.00</span>
+              <span>{{totalItem}} Items</span>
             </div>
           </div>
           </a>
@@ -224,7 +224,7 @@
           <form action="#" method="get" [formGroup]="subForm" (ngSubmit)="onSub()">
           <div class="row">
             <div class="col-8">
-              <input type="email" placeholder="Enter your e-mail" name="subscribe-email" required class="form-control" >
+              <input type="email" placeholder="Enter your e-mail" formControlName="email" required class="form-control" >
             </div>
             <div class="col-4">
               <button type="submit" class="form-control">Submit   </button>

@@ -22,13 +22,17 @@ import { PoliciesComponent } from './about/policies/policies.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { StoresComponent } from './stores/stores.component';
 import { AnnouncementsComponent } from './about/announcements/announcements.component';
-import { DemoComponent } from './demo/demo.component';
 import { ProductsNewComponent } from './products-new/products-new.component';
 import { SearchComponent } from './search/search.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CatChildComponent } from './categories/cat-child/cat-child.component';
 import { StoreChildComponent } from './stores/store-child/store-child.component';
 import { HomeChildComponent } from './home/home-child/home-child.component';
+import { PriceChangeComponent } from './products-new/price-change/price-change.component';
+import {SearchChildComponent} from "./search/search-child/search-child.component";
+import {NgxPaginationModule} from 'ngx-pagination';
+
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
@@ -47,7 +51,6 @@ const appRoutes: Routes = [
   {path: 'track', component: TrackingComponent},
   {path: 'stores/:vdr', component: StoresComponent},
   {path: 'announcements', component: AnnouncementsComponent},
-  {path: 'demo', component: DemoComponent},
   {path:'search/:key', component: SearchComponent},
 ]
 @NgModule({
@@ -68,12 +71,14 @@ const appRoutes: Routes = [
     TrackingComponent,
     StoresComponent,
     AnnouncementsComponent,
-    DemoComponent,
     ProductsNewComponent,
     SearchComponent,
     CatChildComponent,
     StoreChildComponent,
-    HomeChildComponent
+    HomeChildComponent,
+    PriceChangeComponent,
+    SearchChildComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -83,6 +88,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
     FormsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
