@@ -37,18 +37,32 @@
           </form>
         </div>
         <div class="col header-cart">
-          <a routerLink="/cart">
           <div class="container-fluid header-cart-item">
-            <div>
-              <span style="font-weight: 500">My cart <i class="bi bi-cart"></i></span>
+            <button class="btn header-cart-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">My cart <i class="bi bi-cart3"></i></button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <div class="offcanvas-header">
+                <h2 class="offcanvas-title" id="offcanvasRightLabel">Cart</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <hr>
+              <div class="offcanvas-body">
+                <div *ngFor="let c of carts">
+                  <div class="row cart-item">
+                  <div class="col-4 cart-img">
+                    <img src="assets/images/{{c.thumbnail}}" alt="" class="img-fluid">
+                  </div>
+                  <div class="col-8 cart-desc">
+                    <h6>{{c.name}}</h6>
+                  </div>
+                  </div>
+                  <br>
+                </div>
+              </div>
+              <div class="offcanvas-end">
+                <a routerLink="/cart" data-bs-dismiss="offcanvas" aria-label="Close"><button class="gocart-btn">Go to Cart</button></a>
+              </div>
             </div>
           </div>
-          <div class="container-fluid header-cart-item">
-            <div>
-              <span>{{totalItem}} Items</span>
-            </div>
-          </div>
-          </a>
         </div>
       </div>
     </div>

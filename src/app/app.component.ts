@@ -13,8 +13,7 @@ import Swal from 'sweetalert2';
 export class AppComponent {
   title = 'SEM1-eProject';
   keyword: string = '';
-  totalItem = this.productService.getCartTotalQty();
-  // totalAmount: number = 0;
+  carts: any;
 
   constructor(private route: ActivatedRoute,
               private http : HttpClient,
@@ -30,6 +29,8 @@ export class AppComponent {
     email: new FormControl('',[Validators.required])
   });
   ngOnInit(){
+    this.carts = this.productService.getCarts();
+    console.log(this.carts);
   }
   onSearch(){
     location.assign('/search/'+this.searchForm.value.name);
