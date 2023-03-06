@@ -31,6 +31,7 @@ import { HomeChildComponent } from './home/home-child/home-child.component';
 import { PriceChangeComponent } from './products-new/price-change/price-change.component';
 import {SearchChildComponent} from "./search/search-child/search-child.component";
 import {NgxPaginationModule} from 'ngx-pagination';
+import { CardChildComponent } from './cart/card-child/card-child.component';
 
 
 
@@ -78,6 +79,7 @@ const appRoutes: Routes = [
     HomeChildComponent,
     PriceChangeComponent,
     SearchChildComponent,
+    CardChildComponent,
 
   ],
   imports: [
