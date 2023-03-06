@@ -182,14 +182,14 @@ header {
 .home-cats h4{
  color: #ffffff;
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   margin: 10px;
   padding: 10px 0;
   min-width: 220px;
   max-width: 310px;
   max-height: 220px;
   width: 100%;
-  /*border-radius: 0 0 10px 10px;*/
+  border-radius: 0 0 10px 10px;
   background-color: rgba(38, 149, 255, 0.8);
   opacity: 1;
 }
