@@ -43,4 +43,26 @@ export class WishlistComponent {
     })
 
   }
+  removeAllItem() {
+    let _this = this;
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "All products will be removed from your Wishlist!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DC3545',
+      cancelButtonColor: '#2695ff',
+      confirmButtonText: 'Yes, delete all!'
+    }).then(function (isConfirm: any) {
+      if (isConfirm.isConfirmed) {
+        sessionStorage.clear();
+        _this.wishes = [];
+        Swal.fire(
+          'Deleted!',
+          'All products has been deleted.',
+          'success'
+        )
+      }
+    })
+  }
 }

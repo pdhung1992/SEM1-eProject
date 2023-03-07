@@ -28,7 +28,8 @@
         </div>
         <br>
       </div>
-      <div class="cart-checkout">
+      <div class="cart-option">
+        <button type="button" class="cart-delete-btn" (click)="removeAllItem()">Clear Cart <i class="bi bi-x-circle"></i></button>
         <a routerLink="/checkout"><button type="button" class="cart-checkout-btn">Proceed to Checkout <i class="bi bi-arrow-right-circle"></i></button></a>
       </div>
     </div>

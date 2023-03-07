@@ -10,6 +10,7 @@ import { ProductService } from "../services/product.service";
 })
 export class VendorsComponent {
   vendors: any;
+  page = 1;
 
   constructor(private route: ActivatedRoute,
               private http : HttpClient,

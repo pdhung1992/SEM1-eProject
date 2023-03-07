@@ -33,3 +33,15 @@
   border: none;
   font-size: 30px;
 }
+.wish-page .wish-option{
+  display: flex;
+  justify-content: end;
+
+}
+.wish-page .wish-option .wish-delete-btn{
+  padding: 5px 20px;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  background-color: #DC3545;
+}

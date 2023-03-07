@@ -3,7 +3,7 @@
     <div class="vendor-page">
       <h2>Vendors</h2>
       <hr>
-      <div *ngFor="let v of vendors">
+      <div *ngFor="let v of vendors | paginate: { itemsPerPage: 15, currentPage: page }">
       <div class="col-4 row vendor-items">
         <div class="vendor-card">
           <div class="vendor-item">
@@ -27,4 +27,6 @@
       </div>
     </div>
   </div>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
 </div>

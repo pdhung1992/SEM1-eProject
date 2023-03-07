@@ -10,17 +10,18 @@ import Swal from 'sweetalert2';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
- carts: any = [];
+  carts: any = [];
 
   constructor(private route: ActivatedRoute,
-              private http : HttpClient,
-              private productService: ProductService)
-  {}
+              private http: HttpClient,
+              private productService: ProductService) {
+  }
 
-  ngOnInit(){
+  ngOnInit() {
     this.carts = this.productService.getCarts();
   }
-  removeItem(idx: number){
+
+  removeItem(idx: number) {
     let _this = this;
     Swal.fire({
       title: 'Are you sure?',
@@ -30,9 +31,9 @@ export class CartComponent {
       confirmButtonColor: '#DC3545',
       cancelButtonColor: '#2695ff',
       confirmButtonText: 'Yes, delete it!'
-    }).then(function (isConfirm: any){
+    }).then(function (isConfirm: any) {
       if (isConfirm.isConfirmed) {
-        _this.carts.splice(idx,1);
+        _this.carts.splice(idx, 1);
         _this.productService.saveCarts(_this.carts);
         Swal.fire(
           'Deleted!',
@@ -42,5 +43,28 @@ export class CartComponent {
       }
     })
 
-}
+  }
+
+  removeAllItem() {
+    let _this = this;
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "All products will be removed from your Cart!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DC3545',
+      cancelButtonColor: '#2695ff',
+      confirmButtonText: 'Yes, delete all!'
+    }).then(function (isConfirm: any) {
+      if (isConfirm.isConfirmed) {
+        sessionStorage.clear();
+        _this.carts = [];
+        Swal.fire(
+          'Deleted!',
+          'All products has been deleted.',
+          'success'
+        )
+      }
+    })
+  }
 }

@@ -46,14 +46,23 @@
   font-size: 30px;
 }
 
-.cart-page .cart-checkout{
+.cart-page .cart-option{
   display: flex;
   justify-content: end;
+
 }
-.cart-page .cart-checkout .cart-checkout-btn{
+.cart-page .cart-option .cart-delete-btn{
+  padding: 5px 20px;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  background-color: #DC3545;
+}
+.cart-page .cart-option .cart-checkout-btn{
   padding: 5px 20px;
   border: none;
   color: #ffffff;
   font-size: 20px;
   background-color: #2695FF;
+  margin-left: 20px;
 }
