@@ -31,6 +31,8 @@ import { HomeChildComponent } from './home/home-child/home-child.component';
 import { PriceChangeComponent } from './products-new/price-change/price-change.component';
 import {SearchChildComponent} from "./search/search-child/search-child.component";
 import {NgxPaginationModule} from 'ngx-pagination';
+import { SitemapComponent } from './sitemap/sitemap.component';
+
 
 
 
@@ -52,6 +54,7 @@ const appRoutes: Routes = [
   {path: 'stores/:vdr', component: StoresComponent, title: "AuctionsTable - Stores"},
   {path: 'announcements', component: AnnouncementsComponent, title: "AuctionsTable - Announcements"},
   {path:'search/:key', component: SearchComponent, title: "AuctionsTable - Search"},
+  {path: 'sitemap', component: SitemapComponent}
 ]
 @NgModule({
   declarations: [
@@ -78,6 +81,7 @@ const appRoutes: Routes = [
     HomeChildComponent,
     PriceChangeComponent,
     SearchChildComponent,
+    SitemapComponent,
   ],
   imports: [
     BrowserModule,
