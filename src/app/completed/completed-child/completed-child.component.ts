@@ -1,20 +1,21 @@
 import { Component, Input } from '@angular/core';
+import Swal from "sweetalert2";
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {ProductService} from "../../services/product.service";
-import Swal from "sweetalert2";
 
 @Component({
-  selector: 'app-store-child',
-  templateUrl: './store-child.component.html',
-  styleUrls: ['./store-child.component.css']
+  selector: 'app-completed-child',
+  templateUrl: './completed-child.component.html',
+  styleUrls: ['./completed-child.component.css']
 })
-export class StoreChildComponent {
+export class CompletedChildComponent {
 
   @Input() products: any;
   now: any;
   old: boolean = false;
   wishes: any = this.productService.getWish();
+  page = 1;
 
   constructor(private route: ActivatedRoute,
               private http : HttpClient,

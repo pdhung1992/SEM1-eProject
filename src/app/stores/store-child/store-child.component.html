@@ -1,19 +1,51 @@
-<div class="row">
-  <div class="col cd-timer-item">
-    <span class="cd-timer-nbr">{{day}}</span>
-    <span class="cd-timer-text">Days</span>
-  </div>
-  <div class="col cd-timer-item">
-    <span class="cd-timer-nbr">{{hour}}</span>
-    <span class="cd-timer-text">Hours</span>
-  </div>
-  <div class="col cd-timer-item">
-    <span class="cd-timer-nbr">{{min}}</span>
-    <span class="cd-timer-text">Mins</span>
-  </div>
-  <div class="col cd-timer-item">
-    <span class="cd-timer-nbr">{{sec}}</span>
-    <span class="cd-timer-text">Secs</span>
+{{compare()}}
+<div *ngIf="!old">
+  <div class="col-3 row item">
+    <div class="card">
+      <div class="card-main">
+        <div class="end-date">{{products.end_time | date: 'yyyy-MMM-dd HH:mm'}}</div>
+        <div class="container-fluid cd-timer">
+          <app-st-timer [endDate]="products.end_time"></app-st-timer>
+        </div>
+        <div class="c-img">
+          <a routerLink="/products/{{products.id}}"><img src="assets/images/{{products.thumbnail}}" alt="" class="img-fluid"></a>
+        </div>
+        <div class="bid-item">
+          <ul>
+            <li><a routerLink="/products/{{products.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
+            <li><a routerLink="#" (click)="addWish(products)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+            <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-content">
+        <a routerLink="/products/{{products.id}}">{{products.name}}</a>
+        <p class="card-price">Current price: <span >$ {{products.current_price}}</span></p>
+      </div>
+    </div>
   </div>
 </div>
+<div *ngIf="old">
+  <div class="col-3 row item">
+    <div class="card">
+      <div class="card-main">
+        <div class="end-date" style="background-color: rgba(220, 53, 69, 0.8); width: 120px">Expired!</div>
+        <div class="c-img">
+          <a routerLink="/products/{{products.id}}"><img src="assets/images/{{products.thumbnail}}" alt="" class="img-fluid"></a>
+        </div>
+        <div class="bid-item">
+          <ul>
+            <li><a routerLink="#" data-toggle="tooltip" (click)="addWish(products)" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
+            <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-content">
+        <a routerLink="/products/{{products.id}}">{{products.name}}</a>
+        <p class="card-price">Winning price: <span >$ {{products.current_price}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 

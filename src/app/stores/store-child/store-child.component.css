@@ -1,4 +1,88 @@
-.cd-timer-item{
+ .item{
+  float: left;
+  width: calc(25% - 20px);
+  margin:  0 10px;
+}
+ .vendor-contact{
+  background-color: rgba(38, 149, 255, 0.1);
+  box-shadow: 0px 0px 13px 0px #00000040;
+  padding: 20px;
+  border-radius: 40px 0 40px;
+  margin-top: 40px;
+}
+ .vendor-contact h4{
+  text-align: center;
+}
+ .vendor-contact input{
+  margin: 10px 0;
+}
+ .vendor-contact .vendor-contact-btn{
+  margin: 10px 0 0;
+  background-color: #2695FF;
+  color: #ffffff;
+  border: none;
+  padding: 5px 20px;
+  font-size: 16px;
+}
+
+ .store-header{
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("https://www.stylefactoryproductions.com/wp-content/uploads/2022/04/how-to-make-an-online-store.png") center center /cover;
+  padding: 20px 0 0;
+  border-radius: 20px;
+}
+ .store-header img{
+  border: #2695FF 2px solid;
+  border-radius: 50%;
+}
+ .store-header .store-info{
+  color: #ffffff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+ .item .card{
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+  box-shadow: 0px 0px 13px 0px #00000040;
+  margin-bottom: 20px;
+}
+ .item .card .card-main {
+  position: relative;
+}
+ .item .card .card-main .end-date{
+  position: relative;
+  background-color: #2695FF;
+  font-weight: 700;
+  color: #ffffff;
+  /*color: #ffffff;*/
+  text-align: center;
+  display: block;
+  height: 30px;
+  width: 150px;
+  border-radius: 0 15px 15px 0;
+  line-height: 30px;
+  font-style: italic;
+  left:-20px;
+  top: 30px;
+}
+ .item .card .card-main .end-date::after{
+  border-top: 6px solid #013364;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  border-left: 8px solid transparent;
+  border-right: 0px solid transparent;
+}
+ .item .card .card-main .cd-timer{
+  position: absolute;
+  bottom: 40px;
+  text-align: center;
+  justify-content: center;
+}
+ .item .card .card-main .cd-timer .cd-timer-item{
   display: flex;
   flex-direction: column;
   height: 60px;
@@ -8,11 +92,74 @@
   padding: 5px 0px 0;
   box-shadow: 0px 0px 13px 0px #00000040;
 }
-.cd-timer-nbr{
+ .item .card .card-main .cd-timer .cd-timer-item .cd-timer-nbr{
   font-size: 18px;
   font-weight: 700;
   color: #000000;
 }
-.cd-timer-text{
+ .item .card .card-main .cd-timer .cd-timer-item .cd-timer-txt{
   font-size: 12px;
+}
+ .item .card .card-main .bid-item{
+  width: calc(100% + 33px);
+  text-align: center;
+  line-height: 45px;
+  background: rgba(38, 149, 255, 1);
+  transition: all 1s ease-in-out;
+  opacity: 0;
+  position:relative;
+  top: 5px;
+  left:-20px;
+
+}
+ .item .card .card-main .bid-item::after{
+  border-top: 6px solid #013364;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  border-left: 8px solid transparent;
+  border-right: 0px solid transparent;
+}
+ .item .card:hover .card-main .bid-item{
+  opacity: 1;
+  top: 5px;
+}
+ .item .card .card-main .bid-item ul{
+  padding: 0;
+  margin: 0;
+}
+ .item .card .card-main .bid-item ul li{
+  display: inline-block;
+  list-style: none;
+  position: relative;
+}
+ .item .card .card-main .bid-item ul li a{
+  color: #ffffff;
+  margin: 0 20px;
+}
+
+
+ .item .card .card-content{
+  padding: 10px 0;
+  text-align: center;
+}
+ .item .card .card-content a{
+  font-size: 20px;
+  color: #000000;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+ .item .card .card-content a:hover{
+  color: rgba(38, 149, 255, 1);
+  text-decoration: none;
+}
+ .item .card .card-content .card-price{
+  color: #606060;
+  font-weight: 700;
+  font-style: italic;
+}
+ .item .card .card-content .card-price span{
+  color: #2695FF;
+  font-weight: 700;
 }

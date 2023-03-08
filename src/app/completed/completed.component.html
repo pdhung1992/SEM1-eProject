@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="completed-page">
+      <h2>Completed Auctions</h2>
+      <hr>
+      <div *ngFor="let p of products ">
+        <app-completed-child [products]="p"></app-completed-child>
+      </div>
+    </div>
+<!--    <pagination-controls (pageChange)="page = $event"></pagination-controls>-->
+  </div>
+</div>
+

@@ -5,30 +5,7 @@
       <h2>{{categories.name}}</h2>
       <hr>
       <div *ngFor="let p of products | paginate: { itemsPerPage: 20, currentPage: page }" >
-        <div class="col-3 row cat-card">
-          <div class="card">
-            <div class="card-main">
-              <div class="end-date" >{{p.end_time| date: 'yyyy-MMM-dd HH:mm'}}</div>
-              <div class="container-fluid cd-timer">
-                <app-cat-child [endDate]="p.end_time"></app-cat-child>
-              </div>
-              <div class="c-img">
-                <a routerLink="/products/{{p.id}}"><img src="assets/images/{{p.thumbnail}}" alt="" class="img-fluid"></a>
-              </div>
-              <div class="bid-item">
-                <ul>
-                  <li><a routerLink="/products/{{p.id}}" data-toggle="tooltip" data-placement="top" title="Bid this product"><i class="bi bi-hammer"></i></a></li>
-                  <li><a routerLink="#" (click)="addWish(p)" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="bi bi-heart"></i></a></li>
-                  <li><a routerLink="#" data-toggle="tooltip" data-placement="top" title="Share"><i class="bi bi-share-fill"></i></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="card-content">
-              <a routerLink="/products/{{p.id}}">{{p.name}}</a>
-              <p class="card-price">Current price: <span >$ {{p.current_price}}</span></p>
-            </div>
-          </div>
-        </div>
+        <app-cat-child [products]="p"></app-cat-child>
       </div>
     </div>
     <pagination-controls (pageChange)="page = $event"></pagination-controls>

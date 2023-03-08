@@ -34,52 +34,7 @@
           <h6><i>Categories: <a routerLink="/categories/{{c.id}}" style="color: #2695FF">{{c.name}}</a></i></h6>
         </div>
       </div>
-      <h4>Current price: $ {{products.current_price}}</h4>
-      <h4>Time left:</h4>
-      <div class="row countdown">
-        <div class="countdown-item">
-          <span class="countdown-item-nbr">{{day}}</span>
-          <span>Days</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-item-nbr">{{hour}}</span>
-          <span>Hours</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-item-nbr">{{min}}</span>
-          <span>Minutes</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-item-nbr">{{sec}}</span>
-          <span>Seconds</span>
-        </div>
-      </div>
-      <br>
-      <h6>Auction end at: {{products.end_time | date: 'yyyy-MMM-dd HH:mm'}}</h6>
-      <br>
-      <form action="#" method="get" [formGroup]="bidForm" (ngSubmit)="onBid()">
-        <div class="row bid-option">
-          <div class="col-5">
-            <app-price-change [newPrice]="products.current_price +1" [bidPrice]="products.current_price"></app-price-change>
-          </div>
-          <div class="col">
-            <button type="submit" class="bid-option-btn" data-toggle="tooltip" data-placement="top" title="Bid with this price" style="background-color: rgba(38, 149, 255, 1)"><i class="bi bi-hammer"></i></button>
-          </div>
-          <div class="col">
-            <button type="button" class="bid-option-btn" data-toggle="tooltip" data-placement="top" title="Add to Wishlist" (click)="addWish(products)" style="background-color: rgba(241, 75, 63, 1)"><i class="bi bi-heart"></i></button>
-          </div>
-          <div class="col">
-            <button type="button" class="bid-option-btn" data-toggle="tooltip" data-placement="top" title="Share" style="background-color: rgba(250, 187, 5, 1)"><i class="bi bi-share"></i></button>
-          </div>
-        </div>
-      </form>
-      <br>
-      <div class="add-cart">
-        <h4>
-          Or buy now for: $ {{products.buynow_price}}
-        </h4>
-        <button type="button" class="add-cart-btn" [disabled]="clicked" (click)="addCart(products); clicked = true; ">Add to Cart <i class="bi bi-bag-plus"></i></button>
-      </div>
+      <app-pro-child [products]="products"></app-pro-child>
       <br>
     </div>
   </div>

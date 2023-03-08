@@ -25,7 +25,7 @@ export class ProductService {
     return this.http.get<any>(`${this.BASE_URL}/group5_products/category?name=${cat}`);
   }
 
-  getProducts(id: number): Observable<any>{
+  getProductsDetail(id: number): Observable<any>{
     // const url = Adapters.BASE_URL+ 'products?limit='+limit;
     return this.http.get<any>(`${this.BASE_URL}/group5_products/detail?id=${id}`);
   }
