@@ -5,35 +5,35 @@
       <h2>
         Sign up
       </h2>
-      <form action="#" name="login-form" method="get">
+      <form action="#" name="login-form" method="get" [formGroup]="signUpForm" (ngSubmit)="onSignup()">
         <div class="form-group">
           <h5>Full name</h5>
           <div class="form-item">
             <span><i class="bi bi-person-vcard"></i></span>
-            <input type="text" placeholder="Enter your full name..." name="fullname" class="form-control">
+            <input type="text" placeholder="Enter your full name..." formControlName="name" class="form-control">
           </div>
           <h5>E-mail</h5>
           <div class="form-item">
             <span><i class="bi bi-envelope-at"></i></span>
-            <input type="email" placeholder="Enter your email..." name="email" class="form-control">
+            <input type="email" placeholder="Enter your email..." formControlName="email" class="form-control">
           </div>
           <h5>Username</h5>
           <div class="form-item">
             <span><i class="bi bi-person-circle"></i></span>
-            <input type="text" placeholder="Enter your username..." name="username" class="form-control">
+            <input type="text" placeholder="Enter your username..." formControlName="username" class="form-control">
           </div>
           <h5>Password</h5>
           <div class="form-item">
             <span><i class="bi bi-lock"></i></span>
-            <input type="password" placeholder="Enter your password..." name="password" class="form-control">
+            <input type="password" placeholder="Enter your password..." formControlName="password" class="form-control">
           </div>
           <h5>Re-enter password</h5>
           <div class="form-item">
             <span><i class="bi bi-lock"></i></span>
-            <input type="password" placeholder="Re-enter your password..." name="password-r" class="form-control">
+            <input type="password" placeholder="Re-enter your password..." formControlName="repassword" class="form-control">
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="agree" required>
+            <input class="form-check-input" type="checkbox" formControlName="checkbox" id="agree" >
             <label class="form-check-label" for="agree">
               <h6>I have read and agreed with the <a routerLink="#">terms and conditions</a></h6>
             </label>

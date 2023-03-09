@@ -23,6 +23,11 @@ export class ContactComponent {
   }
   onContact(){
     this.submited = true;
+    Swal.fire({
+      icon: 'success',
+      title: 'Success!',
+      text: 'Your message have been sent!',
+    })
     if(this.contactForm.invalid){
       Swal.fire({
         icon: 'error',
